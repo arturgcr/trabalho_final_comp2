@@ -7,6 +7,8 @@ livros por parte dos administradores casos haja acrescrescimo no estoque
 
 corrigir os elifs de casos onde o for percorre as linhas do arquivo csv (acho q estão corrigidos)
 
+podemos fazer as datas em dia, mes e ano, geraqndo um grafico para o vendedor e o administrador com o eixo x de tempo, selecionando se ele seria mes, dia ou ano
+
 #define o botão
 #botao = Button(tela_de_login, text = "Carrinho", command = lambda: print("funciona"))
 #exibe o botão na tela
