@@ -59,6 +59,7 @@ def loginUsuario(email_login,senha_login):
             print("funcionou")
             #retorna o objeto
             return usuario_ativo
+            break
 
         elif i == len(arquivo):
             loginUsuario()
