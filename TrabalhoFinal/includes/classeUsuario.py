@@ -22,6 +22,7 @@ class Usuario:
             if arquivo[i][0] == produto:
                 #adiciona ao carrinho de compra o nome e o valor do produto encontrado
                 self.carrinho_de_compras.append([arquivo[i][0], arquivo[i][3]])
+                break
             elif i == len(arquivo):
                 print("arquivo não encontrado")
 
@@ -90,6 +91,7 @@ class Usuario:
                 if arquivo[i][0] == produto:
                     #diminui a quantidade desejada do estoque
                     arquivo[i][5] = int(arquivo[i][5]) + qtd
+                    break
                 #para caso do aplicativo não ser encontrado
                 elif i == len(arquivo):
                     print("arquivo não encontrado")
@@ -105,6 +107,7 @@ class Usuario:
                 if arquivo[i][0] == produto:
                     #iguala o preço ao produto
                     arquivo[i][3] =  preco
+                    break
                 #para caso do aplicativo não ser encontrado
                 elif i == len(arquivo):
                     print("arquivo não encontrado")
