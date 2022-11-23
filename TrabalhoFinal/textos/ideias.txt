@@ -1,0 +1,27 @@
+objeto usuario:
+    carrinho de compras -> haje sobre o arquivo
+
+não precisa de um objeto produto, so precisamos agir sobre o arquivo csv,
+subtraindo as compras, mudando de estado caso esteja em estoque, adicionando
+livros por parte dos administradores casos haja acrescrescimo no estoque
+
+corrigir os elifs de casos onde o for percorre as linhas do arquivo csv (acho q estão corrigidos)
+
+#define o botão
+#botao = Button(tela_de_login, text = "Carrinho", command = lambda: print("funciona"))
+#exibe o botão na tela
+#botao.pack()
+
+#define um bloco de texto a ser exibido
+#label = Label(tela_de_login, text = pd.read_csv('dataset_produtos/dataset_livros.csv').head())
+#exibe o bloco de texto
+#label.pack()
+
+
+- criar cadastro de usuarios com parte gráfica:
+    @ verificando se o email é repetido
+    @ verificando se a senha atende os requisitos
+    @ salvando as informações em um sqlt ou txt(tentei mas n sei como fazer pra acessar de uma forma descente) ou csv |(a decidir qual é melhor)
+
+    email, nome, endereco, estado_usuario, senha
+arturgcr78@gmail.com, artur, casa, administrador, senhadificil123
