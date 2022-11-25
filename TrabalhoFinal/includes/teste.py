@@ -6,7 +6,7 @@ janela = sg.Window("titulo", layout)
 
 while True:
     evento, valores = janela.read()
-    if evento == sg.WIN.CLOSED:
+    if evento == sg.WINDOW.CLOSED:
         break
 
 janela.close()
