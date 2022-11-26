@@ -28,3 +28,5 @@ podemos fazer as datas em dia, mes e ano, geraqndo um grafico para o vendedor e 
 
     email, nome, endereco, estado_usuario, senha
 arturgcr78@gmail.com, artur, casa, administrador, senhadificil123
+
+talvez criar o objeto produto para adcionar um botão a cada 
