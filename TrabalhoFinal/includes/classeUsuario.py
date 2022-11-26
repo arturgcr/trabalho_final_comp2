@@ -19,12 +19,13 @@ class Usuario:
         #percorre a linhas dos arquivos do dataset
         for i in range(1,len(arquivo)):
             #se o item do dataset for encontrado executa oque ta dentro do if
-            if arquivo[i][0] == produto:
+            if arquivo[i][0] == produto and arquivo[i][5] > 0 :
                 #adiciona ao carrinho de compra o nome e o valor do produto encontrado
                 self.carrinho_de_compras.append([arquivo[i][0], arquivo[i][3]])
                 break
+            
             elif i == len(arquivo):
-                print("arquivo não encontrado")
+                print("arquivo não encontrado ou esgotado de nossa loja")
 
     def remover_produto_do_carrinho(self, produto):
         """Função que remove um item selecionado da lista denominada carrinho"""
@@ -34,10 +35,10 @@ class Usuario:
             if self.carrinho[i][0] == produto:
                 #depois de verificado remove o iten da lista
                 self.carrinho_de_compras.remove(self.carrinho[i])
-                #encerra a busca para evitar tirar todas as repetições do carrinho
-                break
+
+            #caso o produto não esteja no carrinho executa oque esta dentro do elif
             elif i == len(self.carrinho_de_compras):
-                print("produto não encontrado")
+                print("produto não encontrado no carrinho")
     
     def limpa_carrinho(self):
         """Função ques excluitodos os itens da lista carrinho"""
@@ -48,18 +49,17 @@ class Usuario:
 
         #define a data para utilizar nas compras
         data = date.today()
-
-        #utilizado para armazenar os inteiros e os somar estabelecendo o valor do carrinho
-        soma_lista = []
-        for i in range(len(self.carrinho_de_compras)):
-            soma_lista.append(int(self.carrinho_de_compras[i][1])) 
+        dia = data[0:4]
+        mes = data[5:7]
+        ano = data[8:10]
 
         #abreo arquivo de historico de compras para registrar a compra
         with open("arquivosCsv/historicoDeCompra.csv", mode="a", newline="\n") as escrita_no_arquivo:
             #define o objeto de escrita
             objeto_de_escrita = writer(escrita_no_arquivo)
-            #escreve os parametros passados na funç~qao no arquivo .csv
-            objeto_de_escrita.writerow([self.email, self.carrinho, sum(soma_lista),data])
+            for i in range(len(self.carrinho_de_compras)):
+                #escreve os parametros passados na funç~qao no arquivo .csv
+                objeto_de_escrita.writerow([self.email, self.carrinho_de_compras[i],dia,mes,ano]) #verificar a forma como vai ser escreito no arquivo
             #exclui todos os itens da lista carrinho
             self.carrinho_de_compras.clear()  
             print("sucesso!!!")
@@ -70,7 +70,7 @@ class Usuario:
         for n in range(len(self.carrinho_de_compras)):
             #percorre as linhas do dataset
             for i in range(1,len(arquivo)):
-                #compara o item do dataset com o item do caarrinho, se for executa o if
+                #compara o item do dataset com o item do carrinho, se for executa o if
                 if self.carrinho_de_compras[n][0] == arquivo[i][0]:
                     #diminui a quantidade disponível do item no dataset
                     arquivo[i][5] = int(arquivo[i][5]) - 1
