@@ -19,9 +19,9 @@ class Usuario:
         #percorre a linhas dos arquivos do dataset
         for i in range(1,len(arquivo)):
             #se o item do dataset for encontrado executa oque ta dentro do if
-            if arquivo[i][0] == produto and arquivo[i][5] > 0 :
+            if arquivo[0][i] == produto and arquivo[5][i] > 0 :
                 #adiciona ao carrinho de compra o nome e o valor do produto encontrado
-                self.carrinho_de_compras.append([arquivo[i][0], arquivo[i][3]])
+                self.carrinho_de_compras.append([arquivo[0][i], arquivo[3][i]])
                 break
             
             elif i == len(arquivo):
@@ -73,7 +73,7 @@ class Usuario:
                 #compara o item do dataset com o item do carrinho, se for executa o if
                 if self.carrinho_de_compras[n][0] == arquivo[i][0]:
                     #diminui a quantidade disponível do item no dataset
-                    arquivo[i][5] = int(arquivo[i][5]) - 1
+                    arquivo[5][i] = int(arquivo[5][i]) - 1
         
         print("compra realizada e enviada para o endereço " + str(self.endereco))
 
@@ -88,9 +88,9 @@ class Usuario:
             #percorre os itens do dataset
             for i in range(1,len(arquivo)):
                 #se o item do dataset for encontrado executa oque ta dentro do if
-                if arquivo[i][0] == produto:
+                if arquivo[0][i] == produto:
                     #diminui a quantidade desejada do estoque
-                    arquivo[i][5] = int(arquivo[i][5]) + qtd
+                    arquivo[5][i] = int(arquivo[5][i]) + qtd
                     break
                 #para caso do aplicativo não ser encontrado
                 elif i == len(arquivo):
@@ -104,9 +104,9 @@ class Usuario:
             #percorre os itens do dataset
             for i in range(1,len(arquivo)):
                 #se o item do dataset for encontrado executa oque ta dentro do if
-                if arquivo[i][0] == produto:
+                if arquivo[0][i] == produto:
                     #iguala o preço ao produto
-                    arquivo[i][3] =  preco
+                    arquivo[3][i] =  preco
                     break
                 #para caso do aplicativo não ser encontrado
                 elif i == len(arquivo):

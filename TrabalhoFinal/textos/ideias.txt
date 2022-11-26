@@ -30,3 +30,7 @@ podemos fazer as datas em dia, mes e ano, geraqndo um grafico para o vendedor e 
 arturgcr78@gmail.com, artur, casa, administrador, senhadificil123
 
 talvez criar o objeto produto para adcionar um botão a cada 
+- talvez a ideia do objeto produto seja cmplicada, seria bom somente atrelar botões a textos impressos,
+botando o nome do produto como o objeto botão
+- n sei alterar os itens de um arquivo oq teria de fazer na classe usuario e no teste onde se cria oa botões
+

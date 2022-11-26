@@ -10,8 +10,8 @@ menu = Tk()
 menu.title("Kilivros")
 
 #tamanho da aba do app (todas as medidas são em pixels)
-largura = 400
-altura = 500
+largura = 800
+altura = 600
 
 #resoluçaõ da tela do usuário
 largura_tela = menu.winfo_screenwidth()
@@ -31,27 +31,43 @@ menu.resizable(False,False)
 menu["bg"] = "darkred"
     
 #define o botão
-alterar_cadastro = Button(menu, text = "Usuário 𓀟",width = 13,justify="left", command = lambda: print("oi"))
+alterar_cadastro = Button(menu, text = "Usuário 𓀟",width = 13, command = lambda: print("oi"))
 #exibe o botão na tela nas coordenadas expressas
 alterar_cadastro.place(x=0,y=0)
 
 #define o botão
-termo = Button(menu, text = "Termo 🎮",width = 13,justify="center", command = lambda: print("oi"))
+termo = Button(menu, text = "Termo 🎮",width = 13, command = lambda: print("oi"))
 #exibe o botão na tela nas coordenadas expressas
 termo.place(x=97,y=0)
 
 #define o botão
-saida_usuario = Button(menu, text = "Sair ⍈",width = 13,justify="center", command = lambda: print("oi"))
+saida_usuario = Button(menu, text = "Sair ⍈",width = 13, command = lambda: print("oi"))
 #exibe o botão na tela nas coordenadas expressas
 saida_usuario.place(x=190,y=0)
 
 #define o botão
-carrinho = Button(menu, text = "Carrinho 🛒",width = 13,justify="center", command = lambda: print("oi"))
+carrinho = Button(menu, text = "Carrinho 🛒",width = 13, command = lambda: print("oi"))
 #exibe o botão na tela nas coordenadas expressas
 carrinho.place(x=283,y=0)
 
 scroll_bar = Scrollbar(menu)
 scroll_bar.pack(side = 'right', fill = 'y')
+
+escrita_no_arquivo = open("TrabalhoFinal/arquivosCsv/dataset_livros.csv", mode="a", newline="\n")
+def atualizaN(i):
+    teste = int(escrita_no_arquivo[5][i]) - 1
+    objeto_de_escrita = writer(escrita_no_arquivo)
+    #adiciona produto ao dataset
+    objeto_de_escrita.writerow(escrita_no_arquivo[0:6][i])
+    objeto_de_escrita.writerow([escrita_no_arquivo[0][i],escrita_no_arquivo[1][i],escrita_no_arquivo[2][i]],escrita_no_arquivo[3][i],escrita_no_arquivo[4][i], teste)
+
+
+#define a variavel de leitura, lendo o arquivo por completo
+arquivo = pd.read_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", header = None)
+#percorre os itens do dataset
+for i in range(1,len(arquivo)):
+    arquivo[0][i] = Button(menu, text = "+", command = lambda: atualizaN(i))
+    arquivo[0][i].place(x=764,y=i*20)
 
 # exibe a aba
 menu.mainloop()
