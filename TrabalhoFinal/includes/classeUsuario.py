@@ -100,13 +100,16 @@ class Usuario:
         """função responsável por alterar o preço de um item no arquivo csv"""
         if self.tipo_usuario == "administrador":
             #define a variavel de leitura, lendo o arquivo por completo
-            arquivo = pd.read_csv("arquivosCsv/dataset_livros.csv", header = None)
+            arquivo = pd.read_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", header = None)
             #percorre os itens do dataset
             for i in range(1,len(arquivo)):
-                #se o item do dataset for encontrado executa oque ta dentro do if
+                #se o item do dataset for encontrado executa oque ta dentro do if     ERRADO!!!
                 if arquivo[0][i] == produto:
                     #iguala o preço ao produto
-                    arquivo[3][i] =  preco
+                    arquivo[i].drop(arquivo[3][i])
+                    arquivo[3][i].append(preco)         #verificar, problemas em inserir o arquivo/muder o preço
+                    print("mudou")                         #with open("TrabalhoFinal/arquivosCsv/dataset_livros.csv", mode="a", newline="\n") as escrita_no_arquivo:
+                    #arquivo.to_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", index = False, header = None)
                     break
                 #para caso do aplicativo não ser encontrado
                 elif i == len(arquivo):
@@ -115,8 +118,11 @@ class Usuario:
     def cadastrar_produtos(self,titulo,categoria,avaliacao,preco,estoque,quantidade):
         if self.tipo_usuario == "administrador":
             #abre o arquivo .csv de cadastro no modo append para adicionar usuarios
-            with open("arquivosCsv/dataset_livros.csv", mode="a", newline="\n") as escrita_no_arquivo:
+            with open("TrabalhoFinal/arquivosCsv/dataset_livros.csv", mode="a", newline="\n") as escrita_no_arquivo:
                 #define o objeto de escrita
                 objeto_de_escrita = writer(escrita_no_arquivo)
                 #adiciona produto ao dataset
                 objeto_de_escrita.writerow([titulo,categoria,avaliacao,preco,estoque,quantidade])
+
+ciro = Usuario("ciro", "endereço", 1234, "ciro@email", "administrador")
+ciro.modifica_valor_do_produto("Soumission", 50)

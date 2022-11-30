@@ -53,20 +53,11 @@ carrinho.place(x=283,y=0)
 scroll_bar = Scrollbar(menu)
 scroll_bar.pack(side = 'right', fill = 'y')
 
-escrita_no_arquivo = open("TrabalhoFinal/arquivosCsv/dataset_livros.csv", mode="a", newline="\n")
-def atualizaN(i):
-    teste = int(escrita_no_arquivo[5][i]) - 1
-    objeto_de_escrita = writer(escrita_no_arquivo)
-    #adiciona produto ao dataset
-    objeto_de_escrita.writerow(escrita_no_arquivo[0:6][i])
-    objeto_de_escrita.writerow([escrita_no_arquivo[0][i],escrita_no_arquivo[1][i],escrita_no_arquivo[2][i]],escrita_no_arquivo[3][i],escrita_no_arquivo[4][i], teste)
-
-
 #define a variavel de leitura, lendo o arquivo por completo
 arquivo = pd.read_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", header = None)
 #percorre os itens do dataset
 for i in range(1,len(arquivo)):
-    arquivo[0][i] = Button(menu, text = "+", command = lambda: atualizaN(i))
+    arquivo[0][i] = Button(menu, text = "+", command = lambda: arquivo[i])
     arquivo[0][i].place(x=764,y=i*20)
 
 # exibe a aba

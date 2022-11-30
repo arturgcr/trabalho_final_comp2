@@ -34,3 +34,4 @@ talvez criar o objeto produto para adcionar um botão a cada
 botando o nome do produto como o objeto botão
 - n sei alterar os itens de um arquivo oq teria de fazer na classe usuario e no teste onde se cria oa botões
 
+- with pd.option_context()
