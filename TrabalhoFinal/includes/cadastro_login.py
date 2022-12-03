@@ -23,7 +23,7 @@ def cadastroDeUsuario(nome,endereco,senha,email,tipo_usuario):
     """função ques cadastro o usuario escrevendo seu nome no arquivo .csv"""
 
     #chama a função de verificação do email utilizado para saber se o mesmoe esta em uso, caso n esteja, entra no if
-    if verificaValidadedoUsuario(email):
+    if verificaValidadedoUsuario(email) and nome != "" and endereco != "" and senha != "" and email != "" and tipo_usuario != "":
         #abre o arquivo .csv de cadastro no modo append para adicionar usuarios
         with open("TrabalhoFinal/arquivosCsv/cadastros.csv", mode="a", newline="\n") as escrita_no_arquivo:
             #define o objeto de escrita
@@ -32,16 +32,22 @@ def cadastroDeUsuario(nome,endereco,senha,email,tipo_usuario):
             objeto_de_escrita.writerow([nome,endereco,senha,email,tipo_usuario])
             #fecha o arquivo para evitar possíveis erros
             escrita_no_arquivo.close()   
-            print("sucesso!!!")
+            print("cadastrado com sucesso")
 
     #caso o email ja tenha sido cadastrado não cadastra o novo, entrando no else
     else:
-        print("email ja cadastrado")
+        print("email ja cadastrado ou espaços não foram preenchidos")
 
 def loginUsuario(email_login,senha_login):
-    """função que cria o objeto usuario a partir de informada a senha e o email de uma pessoa ja cadastrada, processo de login"""
-    global usuario_ativo
+    """função que cria o objeto usuario a partir de informada a senha e o email de 
+    uma pessoa ja cadastrada, processo de login"""
     arquivo = pd.read_csv("TrabalhoFinal/arquivosCsv/cadastros.csv", header = None)
+
+    global nome
+    global endereco
+    global senha
+    global email
+    global tipo_usuario
 
     #percorre as linhas do arquivo de cadastros de usuarios
     for i in range(1,len(arquivo)):
@@ -53,14 +59,11 @@ def loginUsuario(email_login,senha_login):
             senha = arquivo[2][i]
             email = arquivo[3][i]
             tipo_usuario = arquivo[4][i]
+            print("variaveis login criada")
+            break
 
-            #cria o objeto usuario, passando seus parametros
-            usuario_ativo = Usuario(nome,endereco,senha,email,tipo_usuario)
-            print("LOGADO")
-            #retorna o objeto
-            return usuario_ativo
-
-        elif i == len(arquivo):
-            loginUsuario()
+        elif i == (len(arquivo) - 1):
+            print("não achei")
+            
 
 

@@ -123,6 +123,7 @@ class Usuario:
             with open("TrabalhoFinal/arquivosCsv/dataset_livros.csv", mode="a", newline="\n") as escrita_no_arquivo:
                 #define o objeto de escrita
                 objeto_de_escrita = writer(escrita_no_arquivo)
-                #adiciona produto ao dataset
-                objeto_de_escrita.writerow([titulo,categoria,avaliacao,preco,estoque,quantidade])
-                print("cadastrado com sucesso")
+                if titulo != "" and avaliacao != "" and preco != "" and estoque != "" and quantidade != "":
+                    #adiciona produto ao dataset
+                    objeto_de_escrita.writerow([titulo,categoria,avaliacao,preco,estoque,quantidade])
+                    print("produto cadastrado com sucesso")
