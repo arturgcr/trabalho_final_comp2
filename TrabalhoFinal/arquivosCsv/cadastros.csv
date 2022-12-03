@@ -1,4 +1,5 @@
 nome,endereco,senha,email,tipo_usuario
-artur,freguesia,senha123,@email,administrador
-aurora,freguesia,senhaboa,aurora@gmail,usuaria
+Artur,freguesia,senha123,@email,administrador
+Aurora,freguesia,senhaboa,aurora@gmail,usuaria
 Beatriz,freguesia,seila123,beatriz@gmail, vendedor
+Ciro,rio de janeiro,oric123,ciro@email,administrador

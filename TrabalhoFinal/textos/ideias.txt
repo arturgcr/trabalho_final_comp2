@@ -35,3 +35,12 @@ botando o nome do produto como o objeto botão
 - n sei alterar os itens de um arquivo oq teria de fazer na classe usuario e no teste onde se cria oa botões
 
 - with pd.option_context()
+
+artur = Usuario("nome","endereco","senha","email","administrador")
+artur.adiciona_produto_ao_carrinho("Soumission")
+artur.adiciona_produto_ao_carrinho("Tipping the Velvet")
+artur.remover_produto_do_carrinho("Soumission")
+print(artur.carrinho_de_compras)
+artur.realizar_compra()
+print(artur.carrinho_de_compras)
+#teste

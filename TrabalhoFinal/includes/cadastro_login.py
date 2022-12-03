@@ -1,12 +1,12 @@
 import pandas as pd
 from csv import *
-from classeUsuario import *
+from Usuario import *
 
 def verificaValidadedoUsuario(termo):
     """função utilizada para a verificação de se o email da tentativa de cadastro ja foi utilizada"""
 
     #define a variavel de leitura, lendo o arquivo por completo
-    arquivo = pd.read_csv("arquivosCsv/cadastros.csv", header = None)
+    arquivo = pd.read_csv("TrabalhoFinal/arquivosCsv/cadastros.csv", header = None)
     #cria uma variavel boleana para fins de verificação
     verificao = True
 
@@ -25,7 +25,7 @@ def cadastroDeUsuario(nome,endereco,senha,email,tipo_usuario):
     #chama a função de verificação do email utilizado para saber se o mesmoe esta em uso, caso n esteja, entra no if
     if verificaValidadedoUsuario(email):
         #abre o arquivo .csv de cadastro no modo append para adicionar usuarios
-        with open("arquivosCsv/cadastros.csv", mode="a", newline="\n") as escrita_no_arquivo:
+        with open("TrabalhoFinal/arquivosCsv/cadastros.csv", mode="a", newline="\n") as escrita_no_arquivo:
             #define o objeto de escrita
             objeto_de_escrita = writer(escrita_no_arquivo)
             #escreve os parametros passados na funç~qao no arquivo .csv
@@ -41,7 +41,7 @@ def cadastroDeUsuario(nome,endereco,senha,email,tipo_usuario):
 def loginUsuario(email_login,senha_login):
     """função que cria o objeto usuario a partir de informada a senha e o email de uma pessoa ja cadastrada, processo de login"""
     global usuario_ativo
-    arquivo = pd.read_csv("arquivosCsv/cadastros.csv", header = None)
+    arquivo = pd.read_csv("TrabalhoFinal/arquivosCsv/cadastros.csv", header = None)
 
     #percorre as linhas do arquivo de cadastros de usuarios
     for i in range(1,len(arquivo)):
@@ -56,10 +56,11 @@ def loginUsuario(email_login,senha_login):
 
             #cria o objeto usuario, passando seus parametros
             usuario_ativo = Usuario(nome,endereco,senha,email,tipo_usuario)
-            print("funcionou")
+            print("LOGADO")
             #retorna o objeto
             return usuario_ativo
-            break
 
         elif i == len(arquivo):
             loginUsuario()
+
+

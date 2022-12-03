@@ -30,7 +30,7 @@ def janela_cadastro():
     # define que as dimensões da tela não podem ser alteradas pelo usuário
     tela_de_cadastro.resizable(False,False)
     #define a logo de canto da tela, puxando-a do arquivo
-    tela_de_cadastro.iconbitmap("imagens/logo.ico")
+    tela_de_cadastro.iconbitmap("TrabalhoFinal/imagens/logo.ico")
     #define o fundo menu inicial com a cor vermelho escura
     tela_de_cadastro["bg"] = "darkred"
 
@@ -62,7 +62,7 @@ def janela_login():
     # define que as dimensões da tela não podem ser alteradas pelo usuário
     tela_de_login.resizable(False,False)
     #define a logo de canto da tela, puxando-a do arquivo
-    tela_de_login.iconbitmap("imagens/logo.ico")
+    tela_de_login.iconbitmap("TrabalhoFinal/imagens/logo.ico")
     #define o fundo menu inicial com a cor vermelho escura
     tela_de_login["bg"] = "darkred"
 
@@ -75,5 +75,5 @@ def janela_login():
     # exibe a aba e mantem
     tela_de_login.mainloop()
 
-janela_login()
+
 

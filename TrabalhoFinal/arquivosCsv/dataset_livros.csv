@@ -1,8 +1,9 @@
 Title,Book_category,Star_rating,Price,Stock,Quantity
-A Light in the Attic,Poetry,Three,40,In stock,22
-Tipping the Velvet,Historical Fiction,One,53.74,In stock,20
-Soumission,Fiction,One,40,In stock,20
-Sharp Objects,Mystery,Four,40,In stock,20
+A Light in the Attic,Poetry,Three,51.77,In stock,22
+Tipping the Velvet,Historical Fiction,One,60.55,In stock,16
+Soumission,Fiction,One,55.55,In stock,23
+Sharp Objects,Mystery,Four,47.82,In stock,20
+Sapiens: A Brief History of Humankind,History,Five,54.23,In stock,20
 The Requiem Red,Young Adult,One,22.65,In stock,19
 The Dirty Little Secrets of Getting Your Dream Job,Business,Four,33.34,In stock,19
 "The Coming Woman: A Novel Based on the Life of the Infamous Feminist, Victoria Woodhull",Default,Three,17.93,In stock,19
@@ -17,7 +18,7 @@ Rip it Up and Start Again,Music,Five,35.02,In stock,19
 Olio,Poetry,One,23.88,In stock,19
 Mesaerion: The Best Science Fiction Stories 1800-1849,Science Fiction,One,37.59,In stock,19
 Libertarianism for Beginners,Politics,Two,51.33,In stock,19
-It's Only the Himalayas,Travel,Two,40,In stock,19
+It's Only the Himalayas,Travel,Two,45.17,In stock,19
 In Her Wake,Thriller,One,12.84,In stock,19
 How Music Works,Music,Two,37.32,In stock,19
 "Foolproof Preserving: A Guide to Small Batch Jams, Jellies, Pickles, Condiments, and More: A Foolproof Guide to Making Small Batch Jams, Jellies, Pickles, Condiments, and More",Food and Drink,Three,30.52,In stock,19
@@ -26,7 +27,7 @@ Black Dust,Romance,Five,34.53,In stock,19
 Birdsong: A Story in Pictures,Childrens,Three,54.64,In stock,19
 America's Cradle of Quarterbacks: Western Pennsylvania's Football Factory from Johnny Unitas to Joe Montana,Default,Three,22.5,In stock,19
 Aladdin and His Wonderful Lamp,Default,Three,53.13,In stock,19
-Worlds Elsewhere: Journeys Around Shakespeareâs Globe,Nonfiction,Five,40,In stock,18
+Worlds Elsewhere: Journeys Around Shakespeareâs Globe,Nonfiction,Five,40.3,In stock,18
 Wall and Piece,Art,Four,44.18,In stock,18
 The Four Agreements: A Practical Guide to Personal Freedom,Spirituality,Five,17.66,In stock,18
 The Five Love Languages: How to Express Heartfelt Commitment to Your Mate,Nonfiction,Three,31.05,In stock,18
@@ -42,9 +43,9 @@ Slow States of Collapse: Poems,Poetry,Three,57.31,In stock,17
 Reasons to Stay Alive,Nonfiction,Two,26.41,In stock,17
 Private Paris (Private #10),Fiction,Five,47.61,In stock,17
 #HigherSelfie: Wake Up Your Life. Free Your Soul. Find Your Tribe.,Nonfiction,Five,23.11,In stock,17
-Without Borders (Wanderlove #1),New Adult,Two,40,In stock,16
+Without Borders (Wanderlove #1),New Adult,Two,45.07,In stock,16
 When We Collided,Contemporary,One,31.77,In stock,16
-"We Love You, Charlie Freeman",Fiction,Five,40,In stock,16
+"We Love You, Charlie Freeman",Fiction,Five,50.27,In stock,16
 Untitled Collection: Sabbath Poems 2014,Poetry,Four,14.27,In stock,16
 "Unseen City: The Majesty of Pigeons, the Discreet Charm of Snails & Other Wonders of the Urban Wilderness",Nonfiction,Four,44.18,In stock,16
 Unicorn Tracks,Fantasy,Three,18.78,In stock,16
@@ -57,7 +58,7 @@ The Torch Is Passed: A Harding Family Story,Add a comment,One,19.09,In stock,16
 The Secret of Dreadwillow Carse,Childrens,One,56.13,In stock,16
 "The Pioneer Woman Cooks: Dinnertime: Comfort Classics, Freezer Food, 16-Minute Meals, and Other Delicious Ways to Solve Supper!",Food and Drink,One,56.41,In stock,16
 The Past Never Ends,Mystery,Four,56.5,In stock,16
-The Natural History of Us (The Fine Art of Pretending #2),Young Adult,Three,40,In stock,16
+The Natural History of Us (The Fine Art of Pretending #2),Young Adult,Three,45.22,In stock,16
 The Nameless City (The Nameless City #1),Sequential Art,Four,38.16,In stock,16
 The Murder That Never Was (Forensic Instincts #5),Fiction,Three,54.11,In stock,16
 The Most Perfect Thing: Inside (and Outside) a Bird's Egg,Science,Four,42.96,In stock,16
@@ -68,7 +69,7 @@ The Gutsy Girl: Escapades for Your Life of Epic Adventure,Nonfiction,One,37.13,I
 The Electric Pencil: Drawings from Inside State Hospital No. 3,Nonfiction,One,56.06,In stock,16
 The Death of Humanity: and the Case for Life,Philosophy,Four,58.11,In stock,16
 "The Bulletproof Diet: Lose up to a Pound a Day, Reclaim Energy and Focus, Upgrade Your Life",Health,Three,49.05,In stock,16
-The Art Forger,Add a comment,Three,40,In stock,16
+The Art Forger,Add a comment,Three,40.76,In stock,16
 The Age of Genius: The Seventeenth Century and the Birth of the Modern Mind,History,One,19.73,In stock,16
 The Activist's Tao Te Ching: Ancient Advice for a Modern Revolution,Spirituality,Five,32.24,In stock,16
 Spark Joy: An Illustrated Master Class on the Art of Organizing and Tidying Up,Nonfiction,Four,41.83,In stock,16
@@ -77,7 +78,7 @@ Security,Horror,Two,39.25,In stock,16
 "Saga, Volume 6 (Saga (Collected Editions) #6)",Fantasy,Three,25.02,In stock,16
 "Saga, Volume 5 (Saga (Collected Editions) #5)",Sequential Art,Two,51.04,In stock,16
 Reskilling America: Learning to Labor in the Twenty-First Century,Nonfiction,Two,19.83,In stock,16
-"Rat Queens, Vol. 3: Demons (Rat Queens (Collected Editions) #11-15)",Sequential Art,Three,40,In stock,16
+"Rat Queens, Vol. 3: Demons (Rat Queens (Collected Editions) #11-15)",Sequential Art,Three,50.4,In stock,16
 "Princess Jellyfish 2-in-1 Omnibus, Vol. 01 (Princess Jellyfish 2-in-1 Omnibus #1)",Sequential Art,Five,13.61,In stock,16
 Princess Between Worlds (Wide-Awake Princess #5),Fantasy,Five,13.34,In stock,16
 "Pop Gun War, Volume 1: Gift",Sequential Art,One,18.97,In stock,16
@@ -92,9 +93,9 @@ My Paris Kitchen: Recipes and Stories,Food and Drink,Two,33.37,In stock,16
 Masks and Shadows,Fantasy,Two,56.4,In stock,16
 "Mama Tried: Traditional Italian Cooking for the Screwed, Crude, Vegan, and Tattooed",Food and Drink,Four,14.02,In stock,16
 "Lumberjanes, Vol. 2: Friendship to the Max (Lumberjanes #5-8)",Sequential Art,Two,46.91,In stock,16
-"Lumberjanes, Vol. 1: Beware the Kitten Holy (Lumberjanes #1-4)",Sequential Art,Three,40,In stock,16
+"Lumberjanes, Vol. 1: Beware the Kitten Holy (Lumberjanes #1-4)",Sequential Art,Three,45.61,In stock,16
 Lumberjanes Vol. 3: A Terrible Plan (Lumberjanes #9-12),Sequential Art,Two,19.92,In stock,16
-"Layered: Baking, Building, and Styling Spectacular Cakes",Food and Drink,One,40,In stock,16
+"Layered: Baking, Building, and Styling Spectacular Cakes",Food and Drink,One,40.11,In stock,16
 Judo: Seven Steps to Black Belt (an Introductory Guide for Beginners),Add a comment,Two,53.9,In stock,16
 Join,Science Fiction,Five,35.67,In stock,16
 In the Country We Love: My Family Divided,Nonfiction,Four,22.0,In stock,16
@@ -211,7 +212,7 @@ Ayumi's Violin,Default,Two,15.48,In stock,15
 Anonymous,Default,Four,46.82,In stock,15
 Amy Meets the Saints and Sages,Default,Three,18.46,In stock,15
 Amid the Chaos,Cultural,One,36.58,In stock,15
-Amatus,Default,Five,40,In stock,15
+Amatus,Default,Five,50.54,In stock,15
 Agnostic: A Spirited Manifesto,Nonfiction,Five,12.51,In stock,15
 Zealot: The Life and Times of Jesus of Nazareth,History,Three,24.7,In stock,14
 You (You #1),Thriller,Five,43.61,In stock,14
@@ -224,7 +225,7 @@ What's It Like in Space?: Stories from Astronauts Who've Been There,Nonfiction,T
 Walt Disney's Alice in Wonderland,Childrens,Five,12.96,In stock,14
 V for Vendetta (V for Vendetta Complete),Default,Four,37.1,In stock,14
 Until Friday Night (The Field Party #1),Young Adult,Two,46.31,In stock,14
-"Unbroken: A World War II Story of Survival, Resilience, and Redemption",Default,Two,40,In stock,14
+"Unbroken: A World War II Story of Survival, Resilience, and Redemption",Default,Two,45.95,In stock,14
 Twenty Yawns,Childrens,Two,22.08,In stock,14
 Through the Woods,Sequential Art,Two,25.38,In stock,14
 This Is Where It Ends,Young Adult,Two,27.12,In stock,14
@@ -245,7 +246,7 @@ The Long Haul (Diary of a Wimpy Kid #9),Humor,One,44.07,In stock,14
 The Loney,Horror,One,23.4,In stock,14
 The Literature Book (Big Ideas Simply Explained),Nonfiction,Three,17.43,In stock,14
 The Last Mile (Amos Decker #2),Mystery,Two,54.21,In stock,14
-The Immortal Life of Henrietta Lacks,Add a comment,Two,40,In stock,14
+The Immortal Life of Henrietta Lacks,Add a comment,Two,40.67,In stock,14
 The Hidden Oracle (The Trials of Apollo #1),Fantasy,Two,52.26,In stock,14
 The Help Yourself Cookbook for Kids: 60 Easy Plant-Based Recipes Kids Can Make to Stay Healthy and Save the Earth,Food and Drink,Three,28.77,In stock,14
 The Guilty (Will Robie #4),Thriller,Two,13.82,In stock,14
@@ -257,8 +258,8 @@ The Bad-Ass Librarians of Timbuktu: And Their Race to Save the Worldâs Most
 The 14th Colony (Cotton Malone #11),Thriller,One,39.24,In stock,14
 That Darkness (Gardiner and Renner #1),Mystery,One,13.92,In stock,14
 Tastes Like Fear (DI Marnie Rome #3),Mystery,One,10.69,In stock,14
-Take Me with You,Fiction,Three,40,In stock,14
-Swell: A Year of Waves,Nonfiction,One,40,In stock,14
+Take Me with You,Fiction,Three,45.21,In stock,14
+Swell: A Year of Waves,Nonfiction,One,45.58,In stock,14
 Superman Vol. 1: Before Truth (Superman by Gene Luen Yang #1),Sequential Art,Five,11.89,In stock,14
 Still Life with Bread Crumbs,Fiction,Three,26.41,In stock,14
 Steve Jobs,Default,Five,39.5,In stock,14
@@ -271,7 +272,7 @@ salt.,Poetry,Four,46.78,In stock,14
 Robin War,Sequential Art,Three,47.82,In stock,14
 "Red Hood/Arsenal, Vol. 1: Open for Business (Red Hood/Arsenal #1)",Sequential Art,Two,25.48,In stock,14
 Rain Fish,Childrens,Three,23.57,In stock,14
-"Quarter Life Poetry: Poems for the Young, Broke and Hangry",Poetry,Five,40,In stock,14
+"Quarter Life Poetry: Poems for the Young, Broke and Hangry",Poetry,Five,50.89,In stock,14
 Pet Sematary,Horror,Three,10.56,In stock,14
 "Overload: How to Unplug, Unwind, and Unleash Yourself from the Pressure of Stress",Self Help,Three,52.15,In stock,14
 Once Was a Time,Childrens,Two,18.28,In stock,14
@@ -280,7 +281,7 @@ No Dream Is Too High: Life Lessons From a Man Who Walked on the Moon,Nonfiction,
 "Naruto (3-in-1 Edition), Vol. 14: Includes Vols. 40, 41 & 42 (Naruto: Omnibus #14)",Sequential Art,Two,38.39,In stock,14
 My Name Is Lucy Barton,Fiction,One,41.56,In stock,14
 My Mrs. Brown,Fiction,Three,24.48,In stock,14
-My Kind of Crazy,Young Adult,One,40,In stock,14
+My Kind of Crazy,Young Adult,One,40.36,In stock,14
 Mr. Mercedes (Bill Hodges Trilogy #1),Fiction,One,28.9,In stock,14
 More Than Music (Chasing the Dream #1),Add a comment,Two,37.61,In stock,14
 Made to Stick: Why Some Ideas Survive and Others Die,Business,Five,38.85,In stock,14
@@ -302,7 +303,7 @@ Hold Your Breath (Search and Rescue #1),Romance,One,28.82,In stock,14
 Hamilton: The Revolution,Nonfiction,Three,58.79,In stock,14
 Greek Mythic History,Default,Five,10.23,In stock,14
 God: The Most Unpleasant Character in All Fiction,Religion,Five,30.03,In stock,14
-Glory over Everything: Beyond The Kitchen House,Historical Fiction,Three,40,In stock,14
+Glory over Everything: Beyond The Kitchen House,Historical Fiction,Three,45.84,In stock,14
 Feathers: Displays of Brilliant Plumage,Art,Three,49.05,In stock,14
 "Far & Away: Places on the Brink of Change: Seven Continents, Twenty-Five Years",Nonfiction,Four,15.06,In stock,14
 Every Last Word,Default,Three,46.47,In stock,14
@@ -312,7 +313,7 @@ Eight Hundred Grapes,Fiction,Four,14.39,In stock,14
 "Eaternity: More than 150 Deliciously Easy Vegan Recipes for a Long, Healthy, Satisfied, Joyful Life",Nonfiction,Five,51.75,In stock,14
 "Eat Fat, Get Thin",Health,Two,54.07,In stock,14
 Don't Get Caught,Young Adult,One,55.35,In stock,14
-Doctor Sleep (The Shining #2),Horror,Two,40,In stock,14
+Doctor Sleep (The Shining #2),Horror,Two,40.12,In stock,14
 Demigods & Magicians: Percy and Annabeth Meet the Kanes (Percy Jackson & Kane Chronicles Crossover #1-3),Fantasy,Five,37.51,In stock,14
 Dear Mr. Knightley,Fiction,Five,11.21,In stock,14
 Daily Fantasy Sports,Default,One,36.58,In stock,14
@@ -325,14 +326,14 @@ City of Fallen Angels (The Mortal Instruments #4),Default,Four,11.23,In stock,14
 City of Bones (The Mortal Instruments #1),Default,One,43.28,In stock,14
 City of Ashes (The Mortal Instruments #2),Default,One,47.27,In stock,14
 Cell,Add a comment,Four,20.29,In stock,14
-Catching Jordan (Hundred Oaks),Young Adult,Three,40,In stock,14
+Catching Jordan (Hundred Oaks),Young Adult,Three,50.83,In stock,14
 "Carry On, Warrior: Thoughts on Life Unarmed",Default,Three,31.85,In stock,14
 Carrie,Default,Two,46.23,In stock,14
 Buying In: The Secret Dialogue Between What We Buy and Who We Are,Nonfiction,Four,37.8,In stock,14
 Brain on Fire: My Month of Madness,Nonfiction,Five,49.32,In stock,14
 Batman: Europa,Sequential Art,Two,32.01,In stock,14
 Barefoot Contessa Back to Basics,Food and Drink,One,28.01,In stock,14
-Barefoot Contessa at Home: Everyday Recipes You'll Make Over and Over Again,Food and Drink,Five,40,In stock,14
+Barefoot Contessa at Home: Everyday Recipes You'll Make Over and Over Again,Food and Drink,Five,50.62,In stock,14
 Balloon Animals,Fiction,Three,17.03,In stock,14
 Art Ops Vol. 1,Sequential Art,Three,48.8,In stock,14
 Aristotle and Dante Discover the Secrets of the Universe (Aristotle and Dante Discover the Secrets of the Universe #1),Young Adult,Four,58.14,In stock,14
@@ -344,7 +345,7 @@ Abstract City,Nonfiction,Five,56.37,In stock,14
 A Time of Torment (Charlie Parker #14),Mystery,Five,48.35,In stock,14
 A Study in Scarlet (Sherlock Holmes #1),Mystery,Two,16.73,In stock,14
 "A Series of Catastrophes and Miracles: A True Story of Love, Science, and Cancer",Add a comment,Two,56.48,In stock,14
-A People's History of the United States,Add a comment,Two,40,In stock,14
+A People's History of the United States,Add a comment,Two,40.79,In stock,14
 A Man Called Ove,Fiction,One,39.72,In stock,14
 A Distant Mirror: The Calamitous 14th Century,History,Three,14.58,In stock,14
 A Brush of Wings (Angels Walking #3),Add a comment,One,55.51,In stock,14
@@ -383,7 +384,7 @@ Furiously Happy: A Funny Book About Horrible Things,Nonfiction,Four,41.46,In sto
 Everyday Italian: 125 Simple and Delicious Recipes,Food and Drink,Five,20.1,In stock,12
 Equal Is Unfair: America's Misguided Fight Against Income Inequality,Politics,One,56.86,In stock,12
 Eleanor & Park,Default,Five,56.51,In stock,12
-Dirty (Dive Bar #1),Romance,Four,40,In stock,12
+Dirty (Dive Bar #1),Romance,Four,40.83,In stock,12
 Can You Keep a Secret? (Fear Street Relaunch #4),Horror,One,48.64,In stock,12
 Boar Island (Anna Pigeon #19),Mystery,Three,59.48,In stock,12
 A Paris Apartment,Historical Fiction,Four,39.01,In stock,12
@@ -391,127 +392,13 @@ A Paris Apartment,Historical Fiction,Four,39.01,In stock,12
 Troublemaker: Surviving Hollywood and Scientology,Default,Two,48.39,In stock,11
 The Widow,Mystery,Two,27.26,In stock,11
 "The Sleep Revolution: Transforming Your Life, One Night at a Time",Nonfiction,Four,11.68,In stock,11
-The Improbability of Love,Fiction,One,40,In stock,11
+The Improbability of Love,Fiction,One,59.45,In stock,11
 The Art of Startup Fundraising,Business,Three,21.0,In stock,11
 Take Me Home Tonight (Rock Star Romance #3),Romance,Three,53.98,In stock,11
 Sleeping Giants (Themis Files #1),Science Fiction,One,48.74,In stock,11
 "Setting the World on Fire: The Brief, Astonishing Life of St. Catherine of Siena",Biography,Two,21.15,In stock,11
 Playing with Fire,Mystery,Three,13.71,In stock,11
-Off the Hook (Fishing for Trouble #1),Romance,Three,47.67,In stock,11
-Mothering Sunday,Fiction,Two,13.34,In stock,11
-"Mother, Can You Not?",Nonfiction,Five,16.89,In stock,11
-M Train,Autobiography,One,27.18,In stock,11
-Lilac Girls,Historical Fiction,Two,17.28,In stock,11
-Lies and Other Acts of Love,Fiction,One,40,In stock,11
-Lab Girl,Autobiography,One,40,In stock,11
-Keep Me Posted,Womens Fiction,Four,20.46,In stock,11
-It Didn't Start with You: How Inherited Family Trauma Shapes Who We Are and How to End the Cycle,Psychology,Three,56.27,In stock,11
-Grey (Fifty Shades #4),Womens Fiction,Four,48.49,In stock,11
-"Exit, Pursued by a Bear",Young Adult,Four,51.34,In stock,11
-Daredevils,Fiction,Three,16.34,In stock,11
-Cravings: Recipes for What You Want to Eat,Food and Drink,Three,20.5,In stock,11
-Born for This: How to Find the Work You Were Meant to Do,Business,Five,21.59,In stock,11
-Arena,Science Fiction,Four,21.36,In stock,11
-Adultery,Default,Five,20.88,In stock,11
-A Mother's Reckoning: Living in the Aftermath of Tragedy,Nonfiction,Three,19.53,In stock,11
-A Gentleman's Position (Society of Gentlemen #3),Romance,Five,14.75,In stock,11
-11/22/63,Fiction,Three,48.48,In stock,11
-"10% Happier: How I Tamed the Voice in My Head, Reduced Stress Without Losing My Edge, and Found Self-Help That Actually Works",Nonfiction,Two,24.57,In stock,10
-10-Day Green Smoothie Cleanse: Lose Up to 15 Pounds in 10 Days!,Health,Five,49.71,In stock,10
-Without Shame,Add a comment,Five,48.27,In stock,9
-Watchmen,Add a comment,Four,58.05,In stock,9
-Unlimited Intuition Now,Default,Four,58.87,In stock,9
-Underlying Notes,Default,Two,11.82,In stock,9
-The Shack,Fiction,One,28.03,In stock,9
-The New Brand You: Your New Image Makes the Sale for You,Default,Five,44.05,In stock,9
-"The Moosewood Cookbook: Recipes from Moosewood Restaurant, Ithaca, New York",Food and Drink,Four,12.34,In stock,9
-The Flowers Lied,Default,Two,16.68,In stock,9
-"The Fabric of the Cosmos: Space, Time, and the Texture of Reality",Science,One,55.91,In stock,9
-The Book of Mormon,Religion,Three,24.57,In stock,9
-The Art and Science of Low Carbohydrate Living,Health,Five,52.98,In stock,9
-The Alien Club,Young Adult,One,54.4,In stock,9
-Suzie Snowflake: One beautiful flake (a self-esteem story),Novels,Five,54.81,In stock,9
-Nap-a-Roo,Childrens,One,25.08,In stock,9
-"NaNo What Now? Finding your editing process, revising your NaNoWriMo book and building a writing career through publishing and beyond",Default,Four,10.41,In stock,9
-Modern Day Fables,Default,Two,47.44,In stock,9
-If I Gave You God's Phone Number....: Searching for Spirituality in America,Spirituality,One,20.91,In stock,9
-"Fruits Basket, Vol. 9 (Fruits Basket #9)",Sequential Art,Four,33.95,In stock,9
-Dress Your Family in Corduroy and Denim,Humor,Three,43.68,In stock,9
-Don't Forget Steven,Young Adult,One,33.23,In stock,9
-Chernobyl 01:23:40: The Incredible True Story of the World's Worst Nuclear Disaster,Nonfiction,Two,35.92,In stock,9
-Art and Fear: Observations on the Perils (and Rewards) of Artmaking,Art,Four,48.63,In stock,9
-A Shard of Ice (The Black Symphony Saga #1),Fantasy,Three,56.63,In stock,9
-A Hero's Curse (The Unseen Chronicles #1),Add a comment,Three,40,In stock,9
-23 Degrees South: A Tropical Tale of Changing Whether...,Add a comment,Two,35.79,In stock,9
-"Zero to One: Notes on Startups, or How to Build the Future",Nonfiction,Three,34.06,In stock,8
-Why Not Me?,Nonfiction,One,17.76,In stock,8
-When Breath Becomes Air,Nonfiction,Two,39.36,In stock,8
-Vagabonding: An Uncommon Guide to the Art of Long-Term World Travel,Travel,Two,36.94,In stock,8
-The Unlikely Pilgrimage of Harold Fry (Harold Fry #1),Default,Five,43.62,In stock,8
-The New Drawing on the Right Side of the Brain,Art,Three,43.02,In stock,8
-"The Midnight Assassin: Panic, Scandal, and the Hunt for America's First Serial Killer",Nonfiction,Four,40,In stock,8
-The Martian (The Martian #1),Default,Two,41.39,In stock,8
-The High Mountains of Portugal,Fiction,One,51.15,In stock,8
-The Grownup,Short Stories,One,35.88,In stock,8
-The E-Myth Revisited: Why Most Small Businesses Don't Work and What to Do About It,Business,One,36.91,In stock,8
-South of Sunshine,Young Adult,One,28.93,In stock,8
-Smarter Faster Better: The Secrets of Being Productive in Life and Business,Nonfiction,Five,38.89,In stock,8
-Silence in the Dark (Logan Point #4),Suspense,Three,58.33,In stock,8
-Shadows of the Past (Logan Point #1),Christian Fiction,Five,39.67,In stock,8
-Roller Girl,Sequential Art,Five,14.1,In stock,8
-Rising Strong,Nonfiction,Three,21.82,In stock,8
-Proofs of God: Classical Arguments from Tertullian to Barth,Philosophy,One,54.21,In stock,8
-Please Kill Me: The Uncensored Oral History of Punk,Music,Four,31.19,In stock,8
-Out of Print: City Lights Spotlight No. 14,Poetry,Five,53.64,In stock,8
-My Life Next Door (My Life Next Door ),Young Adult,Five,36.39,In stock,8
-Miller's Valley,Fiction,Two,58.54,In stock,8
-Man's Search for Meaning,Nonfiction,Three,29.48,In stock,8
-"Love That Boy: What Two Presidents, Eight Road Trips, and My Son Taught Me About a Parent's Expectations",Nonfiction,Two,25.06,In stock,8
-Living Forward: A Proven Plan to Stop Drifting and Get the Life You Want,Nonfiction,Three,12.55,In stock,8
-Les Fleurs du Mal,Poetry,Five,29.04,In stock,8
-Left Behind (Left Behind #1),Default,Two,40,In stock,8
-Kill 'Em and Leave: Searching for James Brown and the American Soul,Music,Five,40,In stock,8
-Kierkegaard: A Christian Missionary to Christians,Philosophy,One,47.13,In stock,8
-John Vassos: Industrial Design for Modern Life,Default,Four,20.22,In stock,8
-I'll Give You the Sun,Default,One,56.48,In stock,8
-I Will Find You,Nonfiction,One,44.21,In stock,8
-Hystopia: A Novel,Fiction,Four,21.96,In stock,8
-Howl and Other Poems,Poetry,Two,40,In stock,8
-History of Beauty,Art,Four,10.29,In stock,8
-Heaven is for Real: A Little Boy's Astounding Story of His Trip to Heaven and Back,Default,Two,52.86,In stock,8
-Future Shock (Future Shock #1),Young Adult,Five,55.65,In stock,8
-Ender's Game (The Ender Quintet #1),Default,One,43.64,In stock,8
-Diary of a Citizen Scientist: Chasing Tiger Beetles and Other New Ways of Engaging the World,Science,One,28.41,In stock,8
-Death by Leisure: A Cautionary Tale,Default,Four,37.51,In stock,8
-Brilliant Beacons: A History of the American Lighthouse,History,Three,40,In stock,8
-Brazen: The Courage to Find the You That's Been Hiding,Nonfiction,Two,19.22,In stock,8
-Between the World and Me,Nonfiction,Four,56.91,In stock,8
-Being Mortal: Medicine and What Matters in the End,Nonfiction,Four,55.06,In stock,8
-"A Murder Over a Girl: Justice, Gender, Junior High",Nonfiction,Three,13.2,In stock,8
-32 Yolks,Food and Drink,Two,53.63,In stock,8
-"""Most Blessed of the Patriarchs"": Thomas Jefferson and the Empire of the Imagination",History,Five,44.48,In stock,8
-You Are a Badass: How to Stop Doubting Your Greatness and Start Living an Awesome Life,Self Help,Three,12.08,In stock,7
-Wildlife of New York: A Five-Borough Coloring Book,Default,Two,22.14,In stock,7
-What Happened on Beale Street (Secrets of the South Mysteries #2),Mystery,Five,25.37,In stock,7
-Unreasonable Hope: Finding Faith in the God Who Brings Purpose to Your Pain,Spirituality,Two,46.33,In stock,7
-Under the Tuscan Sun,Travel,Three,37.33,In stock,7
-Toddlers Are A**holes: It's Not Your Fault,Humor,One,25.55,In stock,7
-The Year of Living Biblically: One Man's Humble Quest to Follow the Bible as Literally as Possible,Default,One,34.72,In stock,7
-The Whale,Childrens,Four,35.96,In stock,7
-The Story of Art,Art,Four,41.14,In stock,7
-The Origin of Species,Science,Four,10.01,In stock,7
-The Great Gatsby,Default,Four,36.05,In stock,7
-The Good Girl,Default,Three,49.03,In stock,7
-The Glass Castle,Add a comment,One,16.24,In stock,7
-The Faith of Christopher Hitchens: The Restless Soul of the World's Most Notorious Atheist,Biography,One,39.55,In stock,7
-The Drowning Girls,Add a comment,Three,35.67,In stock,7
-The Constant Princess (The Tudor Court #1),Historical Fiction,Three,16.62,In stock,7
-The Bourne Identity (Jason Bourne #1),Fiction,Four,42.78,In stock,7
-The Bachelor Girl's Guide to Murder (Herringford and Watts Mysteries #1),Mystery,Five,52.3,In stock,7
-The Art Book,Art,Two,32.34,In stock,7
-The 7 Habits of Highly Effective People: Powerful Lessons in Personal Change,Default,Four,33.17,In stock,7
-Team of Rivals: The Political Genius of Abraham Lincoln,Add a comment,Five,20.12,In stock,7
-Steal Like an Artist: 10 Things Nobody Told You About Being Creative,Default,Two,20.9,In stock,7
-"Sit, Stay, Love",Romance,Three,20.9,In stock,7
-Sister Dear,Fiction,Four,40,In stock,7
-"Shrunken Treasures: Literary Classics, Short, Sweet, and Silly",Childrens,Three,52.87,In stock,7
+livro de teste,Poetry,Two,33.33,In Stock,42
+produto teste,Poetry,Two,35.5,In Stock,13
+teste,Poetry,Two,29.9,In Stock,42
+teste,teste,teste,teste,In Stock,teste
