@@ -1,13 +1,13 @@
 Title,Book_category,Star_rating,Price,Stock,Quantity
-A Light in the Attic,Poetry,Three,51.77,In stock,22
-Tipping the Velvet,Historical Fiction,One,60.55,In stock,16
+A Light in the Attic,Poetry,Three,51.77,In stock,11
+Tipping the Velvet,Historical Fiction,One,60.55,In stock,42
 Soumission,Fiction,One,55.55,In stock,23
 Sharp Objects,Mystery,Four,47.82,In stock,20
 Sapiens: A Brief History of Humankind,History,Five,54.23,In stock,20
 The Requiem Red,Young Adult,One,22.65,In stock,19
 The Dirty Little Secrets of Getting Your Dream Job,Business,Four,33.34,In stock,19
 "The Coming Woman: A Novel Based on the Life of the Infamous Feminist, Victoria Woodhull",Default,Three,17.93,In stock,19
-The Boys in the Boat: Nine Americans and Their Epic Quest for Gold at the 1936 Berlin Olympics,Default,Four,22.6,In stock,19
+The Boys in the Boat: Nine Americans and Their Epic Quest for Gold at the 1936 Berlin Olympics,Default,Four,22.6,In stock,18
 The Black Maria,Poetry,One,52.15,In stock,19
 "Starving Hearts (Triangular Trade Trilogy, #1)",Default,Two,13.99,In stock,19
 Shakespeare's Sonnets,Poetry,Four,20.66,In stock,19
@@ -392,13 +392,12 @@ A Paris Apartment,Historical Fiction,Four,39.01,In stock,12
 Troublemaker: Surviving Hollywood and Scientology,Default,Two,48.39,In stock,11
 The Widow,Mystery,Two,27.26,In stock,11
 "The Sleep Revolution: Transforming Your Life, One Night at a Time",Nonfiction,Four,11.68,In stock,11
-The Improbability of Love,Fiction,One,59.45,In stock,11
+The Improbability of Love,Fiction,One,59.45,In stock,12
 The Art of Startup Fundraising,Business,Three,21.0,In stock,11
 Take Me Home Tonight (Rock Star Romance #3),Romance,Three,53.98,In stock,11
 Sleeping Giants (Themis Files #1),Science Fiction,One,48.74,In stock,11
 "Setting the World on Fire: The Brief, Astonishing Life of St. Catherine of Siena",Biography,Two,21.15,In stock,11
 Playing with Fire,Mystery,Three,13.71,In stock,11
 livro de teste,Poetry,Two,33.33,In Stock,42
-produto teste,Poetry,Two,35.5,In Stock,13
-teste,Poetry,Two,29.9,In Stock,42
-teste,teste,teste,teste,In Stock,teste
+produto teste,Poetry,Two,35.5,In Stock,42
+teste,Poetry,Two,29.9,In Stock,35

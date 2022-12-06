@@ -2,6 +2,8 @@ import pandas as pd
 from csv import *
 from datetime import date
 from tkinter import *
+from matplotlib import pyplot as plt
+import numpy as np
 
 class Usuario:
     def __init__(self,nome,endereco,senha,email,tipo_usuario):
@@ -23,6 +25,7 @@ class Usuario:
             if arquivo[0][i] == produto and int(arquivo[5][i]) > 0 :
                 #adiciona ao carrinho de compra o nome e o valor do produto encontrado
                 self.carrinho_de_compras.append([arquivo[0][i], arquivo[3][i]])
+                print([arquivo[0][i], arquivo[3][i]])
                 break
             
             elif i == len(arquivo):
@@ -31,11 +34,13 @@ class Usuario:
     def remover_produto_do_carrinho(self, produto):
         """Função que remove um item selecionado da lista denominada carrinho"""
         #percorre os itens do carrinho de compras
-        for i in range(len(self.carrinho_de_compras) - 1):
+        for i in range(len(self.carrinho_de_compras)):
             #compara os itens do carrinho com o produto qe deseja ser removido
             if self.carrinho_de_compras[i][0] == produto:
                 #depois de verificado remove o iten da lista
                 self.carrinho_de_compras.remove(self.carrinho_de_compras[i])
+                print("produto removido")
+                break
 
             #caso o produto não esteja no carrinho executa oque esta dentro do elif
             elif i == len(self.carrinho_de_compras):
@@ -60,7 +65,7 @@ class Usuario:
             objeto_de_escrita = writer(escrita_no_arquivo)
             for i in range(len(self.carrinho_de_compras)):
                 #escreve os parametros passados na funç~qao no arquivo .csv
-                objeto_de_escrita.writerow([self.email, self.carrinho_de_compras[i],dia,mes,ano])
+                objeto_de_escrita.writerow([self.email, self.carrinho_de_compras[i][0],self.carrinho_de_compras[i][1],dia,mes,ano])
 
         #define a variavel de leitura, lendo o arquivo por completo
         arquivo = pd.read_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", header = None)
@@ -75,7 +80,10 @@ class Usuario:
                     arquivo.to_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", header = None, index = False)
                     #exclui todos os itens da lista carrinho
         self.carrinho_de_compras.clear()  
-        print("compra realizada e enviada para o endereço " + str(self.endereco))
+        if self.tipo_usuario == "usuario":
+            print("compra realizada e enviada para o endereço " + str(self.endereco))
+        else:
+            print("compra concluida")
 
         #fecha o arquivo para evitar possíveis erros
         escrita_no_arquivo.close() 
@@ -117,7 +125,7 @@ class Usuario:
                 elif i == len(arquivo):
                     print("arquivo não encontrado")
     
-    def cadastrar_produtos(self,titulo,categoria,avaliacao,preco,estoque,quantidade):
+    def cadastrar_produtos(self,titulo,categoria,avaliacao,preco,estoque,quantidade, aba):
         if self.tipo_usuario == "administrador":
             #abre o arquivo .csv de cadastro no modo append para adicionar usuarios
             with open("TrabalhoFinal/arquivosCsv/dataset_livros.csv", mode="a", newline="\n") as escrita_no_arquivo:
@@ -126,4 +134,70 @@ class Usuario:
                 if titulo != "" and avaliacao != "" and preco != "" and estoque != "" and quantidade != "":
                     #adiciona produto ao dataset
                     objeto_de_escrita.writerow([titulo,categoria,avaliacao,preco,estoque,quantidade])
+                    aba.destroy()
                     print("produto cadastrado com sucesso")
+
+    def exibe_historico(self):
+        #define a variavel de leitura, lendo o arquivo por completo
+        arquivo = pd.read_csv("TrabalhoFinal/arquivosCsv/historicoDeCompra.csv", header = None)
+        if self.tipo_usuario == "usuario":
+            for i in range(1,(len(arquivo)-1)):
+                if arquivo[0][i] == self.email:
+                    print([arquivo[0][i],arquivo[1][i],arquivo[2][i],arquivo[3][i],arquivo[4][i],arquivo[5][i]])
+        
+        if self.tipo_usuario == "vendedor" or self.tipo_usuario == "administrador":
+            cliente = input("De qual cliente você gostaria de verificar o histórico?")
+            for i in range(1,(len(arquivo)-1)):
+                if cliente == arquivo[0][i]:
+                    print([arquivo[0][i],arquivo[1][i],arquivo[2][i],arquivo[3][i],arquivo[4][i],arquivo[5][i]])
+    
+    def soma_do_carrinho(self):
+        lista_de_soma = []
+        for i in range(len(self.carrinho_de_compras)):
+            lista_de_soma.append(float(self.carrinho_de_compras[i][1]))
+        return round(sum(lista_de_soma), 2)
+
+    def modifica_qtd_em_estoque(self, produto, qtd):
+        #define a variavel de leitura, lendo o arquivo por completo
+        arquivo = pd.read_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", header = None)
+        for i in range(1,(len(arquivo)-1)):
+            if str(arquivo[0][i]) == str(produto):
+                arquivo[5][i] = qtd
+                #define o dataset como o arquivo com o detalhe a cima modificado
+                arquivo.to_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", header = None, index = False)
+                print("modificado " + str(arquivo[0][i]) +" "+ str(arquivo[5][i]))
+                break
+            else:
+                print("nome do produto errado")
+
+    def exibe_dataset(self):
+        arquivo = pd.read_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", header = None)
+        for i in range(1,(len(arquivo)-1)):
+             print([arquivo[0][i],arquivo[1][i],arquivo[2][i],arquivo[3][i],arquivo[4][i],arquivo[5][i]])
+
+    def grafico_mediavend(self,dia,mes,ano):
+        datelist = []
+        vendassem = []
+        n = dia
+        numvend = 0
+        historico = pd.read_csv("TrabalhoFinal/arquivosCsv/historicoDeCompra.csv",header=None)
+        while n < dia + 7:
+            for i in range(1,len(historico)):
+                if historico[3][i] == n and historico[4][i] == mes and historico[5][i] == ano:
+                    numvend = numvend + 1
+            n = n + 1
+            vendassem = vendassem + [numvend]
+            numvend = 0
+        n = dia
+        for j in range(0,len(vendassem)):
+            list.append(datelist,[[vendassem[j],str(n)+"/"+str(mes)+"/"+str(ano)]])
+            n = n + 1
+        df = pd.DataFrame(data = datelist, columns =["vendas","dias"])
+        print("média :" + str(sum(vendassem)/7))
+        print("desvio padrão :" + str(np.std(vendassem)))
+        janela = plt.figure(figsize=(10,5))
+        grafico = janela.add_axes([0,0,1,1])
+        grafico.bar(df["dias"],df["vendas"])
+
+#artur = Usuario("Artur","freguesia","senha123","@email","administrador")
+#artur.grafico_mediavend(4,12,2022)

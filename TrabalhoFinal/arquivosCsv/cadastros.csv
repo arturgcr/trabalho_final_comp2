@@ -1,5 +1,6 @@
 nome,endereco,senha,email,tipo_usuario
 Artur,freguesia,senha123,@email,administrador
-Aurora,freguesia,senhaboa,aurora@gmail,usuaria
+Aurora,freguesia,senhaboa,aurora@gmail,usuario
 Beatriz,freguesia,seila123,beatriz@gmail, vendedor
 Ciro,rio de janeiro,oric123,ciro@email,administrador
+Fla,Estrada do nunca,eumesmo,flafla@eumail.com,usuario
