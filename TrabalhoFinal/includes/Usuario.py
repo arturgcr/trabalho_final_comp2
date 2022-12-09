@@ -45,10 +45,6 @@ class Usuario:
             #caso o produto não esteja no carrinho executa oque esta dentro do elif
             elif i == len(self.carrinho_de_compras):
                 print("produto não encontrado no carrinho")
-    
-    def limpa_carrinho(self):
-        """Função ques excluitodos os itens da lista carrinho"""
-        self.carrinho_de_compras.clear() 
 
     def realizar_compra(self):
         """função que realiza a compra do carrinho a salvando em um historico, arquivo .csv"""
@@ -132,10 +128,24 @@ class Usuario:
                 #define o objeto de escrita
                 objeto_de_escrita = writer(escrita_no_arquivo)
                 if titulo != "" and avaliacao != "" and preco != "" and estoque != "" and quantidade != "":
-                    #adiciona produto ao dataset
-                    objeto_de_escrita.writerow([titulo,categoria,avaliacao,preco,estoque,quantidade])
-                    aba.destroy()
-                    print("produto cadastrado com sucesso")
+                    #define a variavel de leitura, lendo o arquivo por completo
+                    arquivo = pd.read_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", header = None)
+                    verificador = False
+                    for i in range(len(arquivo)):
+                        if str(titulo) == str(arquivo[0][i]):
+                            verificador = False
+                            break
+                        else:
+                            verificador = True
+                    if verificador == False:
+                        print("produto ja cadastrado")
+                    else:
+                        #adiciona produto ao dataset
+                        objeto_de_escrita.writerow([titulo,categoria,avaliacao,preco,estoque,quantidade])
+                        aba.destroy()
+                        print("produto cadastrado com sucesso")
+                else:
+                    print("insira valores válidos")
 
     def exibe_historico(self):
         #define a variavel de leitura, lendo o arquivo por completo
@@ -198,6 +208,3 @@ class Usuario:
         janela = plt.figure(figsize=(10,5))
         grafico = janela.add_axes([0,0,1,1])
         grafico.bar(df["dias"],df["vendas"])
-
-#artur = Usuario("Artur","freguesia","senha123","@email","administrador")
-#artur.grafico_mediavend(4,12,2022)

@@ -20,18 +20,25 @@ def verificaValidadedoUsuario(termo):
     #retorna a verificao
     return(verificao)
 
-def cadastroDeUsuario(nome,endereco,senha,email,tipo_usuario, aba, aba_a_ser_aberta):
+def cadastroDeUsuario(nome,endereco,senha,email,tipo_usuario, aba , aba_a_ser_aberta):
     """função ques cadastro o usuario escrevendo seu nome no arquivo .csv"""
 
     #chama a função de verificação do email utilizado para saber se o mesmoe esta em uso, caso n esteja, entra no if
-    if verificaValidadedoUsuario(email) and nome != "" and endereco != "" and senha != "" and email != "" and tipo_usuario != "":
+    if verificaValidadedoUsuario(email) and nome != "" and endereco != "" and senha != "" and email != "":
         aba.destroy()
         #abre o arquivo .csv de cadastro no modo append para adicionar usuarios
         with open("TrabalhoFinal/arquivosCsv/cadastros.csv", mode="a", newline="\n") as escrita_no_arquivo:
             #define o objeto de escrita
             objeto_de_escrita = writer(escrita_no_arquivo)
-            #escreve os parametros passados na funç~qao no arquivo .csv
-            objeto_de_escrita.writerow([nome,endereco,senha,email,tipo_usuario])
+            #valida se a entrada opcional foi usada dentro do estabelecido se n for será tratado como usuario
+            if tipo_usuario not in ["administrador", "usuario", "vendedor"]:
+                #escreve os parametros passados na funç~qao no arquivo .csv
+                objeto_de_escrita.writerow([nome,endereco,senha,email,"usuario"])
+                print("aqui")
+            else:
+                #escreve os parametros passados na funç~qao no arquivo .csv
+                objeto_de_escrita.writerow([nome,endereco,senha,email,tipo_usuario])
+                print("n funcionou")
             print("cadastrado com sucesso")
         aba_a_ser_aberta.tela_de_login()
 
@@ -73,6 +80,7 @@ def loginUsuario(email_login,senha_login, aba, aba_a_ser_fechada):
 global filtro
 filtro = {0: "Poetry", 1:"Mystery", 2:"Biography", 3:"Science Fiction", 4:"Romance", 5:"Business", 6:"Fiction", 7:"Politics", 8:"Default", 9:"Psychology", 10:None}
 
+#classe para contar na exibição do filtro
 class Contador:
     def __init__(self, inicio):
         self.indice = inicio
@@ -83,13 +91,19 @@ class Contador:
     def zerar(self):
         self.indice = 0
 
-
+#cria os objetos contadores para utilizar na exibição do filtro, assim n se perde a contagem
 global contador_filtro
 contador_filtro = Contador(10)
 
 global contador_botao
 contador_botao = Contador(0)
-    
+
+class Reserva_botao:
+    def __init__(self, i):
+        self.indice = i
+
+    def retorna_i(self):
+        return self.indice
 
             
 

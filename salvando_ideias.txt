@@ -1,0 +1,1 @@
+cl.usuario_ativo.adiciona_produto_ao_carrinho(arquivo[0][i])

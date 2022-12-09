@@ -159,13 +159,13 @@ class Tela:
 
     tipo_usuario_cadastro = Entry(self.titulo,width=19, bg='white', font=('Comic Sans MS', '12'))
     tipo_usuario_cadastro.place(x=152, y=180)
-    info_tipo_usuario_cadastro = Label(self.titulo,font=('Comic Sans MS', '12', 'bold'), fg='white', bg=self.cor_de_fundo, text='Tipo de Usuário:')
+    info_tipo_usuario_cadastro = Label(self.titulo,font=('Comic Sans MS', '12', 'bold'), fg='white', bg=self.cor_de_fundo, text='Código (opcional):')
     info_tipo_usuario_cadastro.place(x=15, y=180)
 
     retorna_ao_login = Button(self.titulo, width=40, fg=self.cor_de_fundo, text = "LOGIN", command = lambda: [self.titulo.destroy(), login_usuario.tela_de_login()] )
     retorna_ao_login.place(x=30,y=220)
 
-    confirma_cadastro = Button(self.titulo, width=40, fg=self.cor_de_fundo, text = "CADASTRAR", command = lambda: [cl.cadastroDeUsuario(nome_cadastro.get(), endereco_cadastro.get(), senha_cadastro.get(), email_cadastro.get(), tipo_usuario_cadastro.get(), self.titulo, login_usuario)] )
+    confirma_cadastro = Button(self.titulo, width=40, fg=self.cor_de_fundo, text = "CADASTRAR", command = lambda: [cl.cadastroDeUsuario(nome_cadastro.get(), endereco_cadastro.get(), senha_cadastro.get(), email_cadastro.get(), tipo_usuario_cadastro.get(), self.titulo, login_usuario)])
     confirma_cadastro.place(x=30,y=250)
 
     self.titulo.mainloop(1)
@@ -223,9 +223,9 @@ class Tela:
       carrinho.place(x=328,y=0)
     
     elif cl.usuario_ativo.tipo_usuario == "administrador":
-      modifica = Button(self.titulo, text = "Modifica Estoque",width = 30, command = lambda: [self.titulo.destroy(), modifica_estoque.tela_de_estoque()])
+      modifica = Button(self.titulo, text = "Modifica Estoque",width = 45, command = lambda: [self.titulo.destroy(), modifica_estoque.tela_de_estoque()])
       #exibe o botão na tela nas coordenadas expressas
-      modifica.place(x=335,y=0)
+      modifica.place(x=328,y=0)
 
     scroll_bar = Scrollbar(self.titulo)
     scroll_bar.pack(side = 'right', fill = 'y')
@@ -237,6 +237,7 @@ class Tela:
     for i in range(1, len(arquivo)):
       if arquivo[1][i] == cl.filtro[cl.contador_filtro.indice] or cl.filtro[cl.contador_filtro.indice] == None:
         cl.contador_botao.aumenta_indice(19,1)
+        
         Button(self.titulo, text = "+", command = lambda: [cl.usuario_ativo.adiciona_produto_ao_carrinho(arquivo[0][i])]).place(x=614,y=int(cl.contador_botao.indice)*30)
         Label(self.titulo,width= 50,font=('Comic Sans MS', '8', 'bold'), fg='darkred', bg="white", text= arquivo[0][i]).place(x=10, y=int(cl.contador_botao.indice)*30)
         Label(self.titulo,width= 10,font=('Comic Sans MS', '8', 'bold'), fg='darkred', bg="white", text= arquivo[1][i]).place(x=398, y=int(cl.contador_botao.indice)*30)
@@ -289,7 +290,7 @@ class Tela:
     self.titulo = Tk()
 
     # define o nome da aba criada
-    self.titulo.title("Cadastro de Produto")
+    self.titulo.title("Modificar estoque")
     #define a logo de canto da tela, puxando-a do arquivo
     self.titulo.iconbitmap("TrabalhoFinal/imagens/logo.ico")
     #define o fundo menu inicial com a cor vermelho escura
