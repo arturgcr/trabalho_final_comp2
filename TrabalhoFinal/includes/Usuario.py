@@ -84,25 +84,9 @@ class Usuario:
         #fecha o arquivo para evitar possíveis erros
         escrita_no_arquivo.close() 
     
-    def adiciona_ao_estoque(self, produto, qtd):
-        """função reponsável para alterar a quantidade de um determinado produto no arquivo csv"""
-        if self.tipo_usuario == "administrador":
-            #define a variavel de leitura, lendo o arquivo por completo
-            arquivo = pd.read_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", header = None)
-            #percorre os itens do dataset
-            for i in range(1,len(arquivo)):
-                #se o item do dataset for encontrado executa oque ta dentro do if
-                if arquivo[0][i] == produto:
-                    #diminui a quantidade desejada do estoque
-                    arquivo[5][i] = int(arquivo[5][i]) + qtd
-                    #define o dataset como o arquivo com o detalhe a cima modificado
-                    arquivo.to_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", header = None, index = False)
-                    break
-                #para caso do aplicativo não ser encontrado
-                elif i == len(arquivo):
-                    print("arquivo não encontrado")
-    
+
     def modifica_valor_do_produto(self, produto, preco):
+        verifica = True
         """função responsável por alterar o preço de um item no arquivo csv"""
         if self.tipo_usuario == "administrador":
             #define a variavel de leitura, lendo o arquivo por completo
@@ -116,10 +100,11 @@ class Usuario:
                     #define o dataset como o arquivo com o detalhe a cima modificado
                     arquivo.to_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", header = None, index = False)
                     #quebra o loop para evitar execução do elif a baixo
+                    verifica = False
                     break
                 #para caso do aplicativo não ser encontrado
-                elif i == len(arquivo):
-                    print("arquivo não encontrado")
+            if verifica:
+                print("arquivo não encontrado")
     
     def cadastrar_produtos(self,titulo,categoria,avaliacao,preco,estoque,quantidade, aba):
         if self.tipo_usuario == "administrador":
@@ -170,15 +155,17 @@ class Usuario:
     def modifica_qtd_em_estoque(self, produto, qtd):
         #define a variavel de leitura, lendo o arquivo por completo
         arquivo = pd.read_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", header = None)
+        verifica = True
         for i in range(1,(len(arquivo)-1)):
             if str(arquivo[0][i]) == str(produto):
                 arquivo[5][i] = qtd
                 #define o dataset como o arquivo com o detalhe a cima modificado
                 arquivo.to_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", header = None, index = False)
-                print("modificado " + str(arquivo[0][i]) +" "+ str(arquivo[5][i]))
+                print("modificado -> " + str(arquivo[0][i]) +" "+ str(arquivo[5][i]))
+                verifica = False
                 break
-            else:
-                print("nome do produto errado")
+        if verifica:
+            print("nome do produto errado")
 
     def exibe_dataset(self):
         arquivo = pd.read_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", header = None)
