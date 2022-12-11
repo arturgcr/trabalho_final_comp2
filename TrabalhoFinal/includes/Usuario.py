@@ -25,11 +25,8 @@ class Usuario:
             if arquivo[0][i] == produto and int(arquivo[5][i]) > 0 :
                 #adiciona ao carrinho de compra o nome e o valor do produto encontrado
                 self.carrinho_de_compras.append([arquivo[0][i], arquivo[3][i]])
-                print([arquivo[0][i], arquivo[3][i]])
+                print(str(arquivo[0][i]) + " foi adicionada ao carrinho")
                 break
-            
-            elif i == len(arquivo):
-                print("arquivo não encontrado ou esgotado de nossa loja")
 
     def remover_produto_do_carrinho(self, produto):
         """Função que remove um item selecionado da lista denominada carrinho"""
@@ -77,9 +74,9 @@ class Usuario:
                     #exclui todos os itens da lista carrinho
         self.carrinho_de_compras.clear()  
         if self.tipo_usuario == "usuario":
-            print("compra realizada e enviada para o endereço " + str(self.endereco))
+            print("Compra realizada e enviada para o endereço " + str(self.endereco) + ", agradecemos pela sua compra")
         else:
-            print("compra concluida")
+            print("Compra concluida")
 
         #fecha o arquivo para evitar possíveis erros
         escrita_no_arquivo.close() 
@@ -104,7 +101,7 @@ class Usuario:
                     break
                 #para caso do aplicativo não ser encontrado
             if verifica:
-                print("arquivo não encontrado")
+                print("Arquivo não encontrado")
     
     def cadastrar_produtos(self,titulo,categoria,avaliacao,preco,estoque,quantidade, aba):
         if self.tipo_usuario == "administrador":
@@ -123,14 +120,14 @@ class Usuario:
                         else:
                             verificador = True
                     if verificador == False:
-                        print("produto ja cadastrado")
+                        print("Produto ja cadastrado")
                     else:
                         #adiciona produto ao dataset
                         objeto_de_escrita.writerow([titulo,categoria,avaliacao,preco,estoque,quantidade])
                         aba.destroy()
                         print("produto cadastrado com sucesso")
                 else:
-                    print("insira valores válidos")
+                    print("Insira valores válidos")
 
     def exibe_historico(self):
         #define a variavel de leitura, lendo o arquivo por completo

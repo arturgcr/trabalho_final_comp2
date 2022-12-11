@@ -34,12 +34,11 @@ def cadastroDeUsuario(nome,endereco,senha,email,tipo_usuario, aba , aba_a_ser_ab
             if tipo_usuario not in ["administrador", "usuario", "vendedor"]:
                 #escreve os parametros passados na funç~qao no arquivo .csv
                 objeto_de_escrita.writerow([nome,endereco,senha,email,"usuario"])
-                print("aqui")
             else:
                 #escreve os parametros passados na funç~qao no arquivo .csv
                 objeto_de_escrita.writerow([nome,endereco,senha,email,tipo_usuario])
-                print("n funcionou")
-            print("cadastrado com sucesso")
+
+            print("__________CADASTRADO__________")
         aba_a_ser_aberta.tela_de_login()
 
     #caso o email ja tenha sido cadastrado não cadastra o novo, entrando no else
@@ -69,13 +68,14 @@ def loginUsuario(email_login,senha_login, aba, aba_a_ser_fechada):
             email = arquivo[3][i]
             tipo_usuario = arquivo[4][i]
             usuario_ativo = Usuario(nome, endereco, senha, email, tipo_usuario)
-            print("variaveis login criada")
+            print("__________LOGADO__________")
             logado = True
             aba.destroy()
             aba_a_ser_fechada.tela_menu()
+            break
 
-        elif logado == False:
-            print("não achei")
+        elif logado == False and i == (len(arquivo)-1):
+            print("Senha ou usuário incorretos ou não cadastrados")
 
 global filtro
 filtro = {0: "Poetry", 1:"Mystery", 2:"Biography", 3:"Science Fiction", 4:"Romance", 5:"Business", 6:"Fiction", 7:"Politics", 8:"Default", 9:"Psychology", 10:None}
