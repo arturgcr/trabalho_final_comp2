@@ -219,7 +219,7 @@ class Tela:
 
     if cl.usuario_ativo.tipo_usuario == "usuario" or cl.usuario_ativo.tipo_usuario == "vendedor":
       #define o botão
-      carrinho = Button(self.titulo, text = "Carrinho 🛒",width = 13, command = lambda: [self.titulo.destroy(), exibe_carrinho.tela_carrinho_de_compras()])
+      carrinho = Button(self.titulo, text = "Carrinho 🛒",width = 45, command = lambda: [self.titulo.destroy(), exibe_carrinho.tela_carrinho_de_compras()])
       #exibe o botão na tela nas coordenadas expressas
       carrinho.place(x=328,y=0)
     
