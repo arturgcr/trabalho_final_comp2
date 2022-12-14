@@ -72,11 +72,14 @@ class Usuario:
                     arquivo[5][i] = int(arquivo[5][i]) - 1
                     arquivo.to_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", header = None, index = False)
                     #exclui todos os itens da lista carrinho
-        self.carrinho_de_compras.clear()  
-        if self.tipo_usuario == "usuario":
-            print("Compra realizada e enviada para o endereço " + str(self.endereco) + ", agradecemos pela sua compra")
+        if self.carrinho_de_compras == []:
+            print("O carrinho está vazio")
         else:
-            print("Compra concluida")
+            self.carrinho_de_compras.clear()  
+            if self.tipo_usuario == "usuario":
+                print("Compra realizada e enviada para o endereço " + str(self.endereco) + ", agradecemos pela sua compra")
+            else:
+                print("Compra concluida")
 
         #fecha o arquivo para evitar possíveis erros
         escrita_no_arquivo.close() 
@@ -138,7 +141,7 @@ class Usuario:
                     print([arquivo[0][i],arquivo[1][i],arquivo[2][i],arquivo[3][i],arquivo[4][i],arquivo[5][i]])
         
         if self.tipo_usuario == "vendedor" or self.tipo_usuario == "administrador":
-            cliente = input("De qual cliente você gostaria de verificar o histórico?")
+            cliente = input("De qual cliente você gostaria de verificar o histórico? ")
             for i in range(1,(len(arquivo)-1)):
                 if cliente == arquivo[0][i]:
                     print([arquivo[0][i],arquivo[1][i],arquivo[2][i],arquivo[3][i],arquivo[4][i],arquivo[5][i]])
@@ -205,3 +208,32 @@ class Usuario:
         janela = plt.figure(figsize=(10,5))
         grafico = janela.add_axes([0,0,1,1])
         grafico.bar(df['tipo'],df['valor'])
+
+def cat_prod(self):
+        nomelist =[]
+        categ = []
+        datelist = []
+        livro = pd.read_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", header = None)
+        historico = pd.read_csv("TrabalhoFinal/arquivosCsv/historicoDeCompra.csv",header=None)
+        n = 0
+        for m in range(0,len(livro)-1):
+            if livro[1][m] not in categ:
+                categ.append(livro[1][m])
+                categ.append(0)
+        for j in range(0,len(historico)-1):
+            nomelist.append(historico[0][j])
+        for i in range(0,len(livro)-1):
+            if nomelist[n] == livro[0][i]: 
+                if livro[1][i] in categ:
+                    for k in range(0,len(categ)-1):
+                        if categ[k] == livro[1][i]:
+                            categ[k+1] = categ[k+1] + 1
+            n = n + 1
+            if n > len(nomelist):
+                break
+        for t in range(0,len(categ)/2):
+            datelist.append([[categ[t],categ[t+1]]])    
+        df = pd.DataFrame(data = datelist, columns =["categoria","venda"])
+        janela = plt.figure(figsize=(10,5))
+        grafico = janela.add_axes([0,0,1,1])
+        grafico.bar(df["categoria"],df["venda"])

@@ -242,7 +242,7 @@ class Tela:
         #exibe o menu colocando o botao e os espaços com nome, categoria, avaliação e preço
         Button(self.titulo, text = "+", command = lambda:(cl.usuario_ativo.adiciona_produto_ao_carrinho(arquivo[0][i]))).place(x=614,y=int(cl.contador_botao.indice)*30)
         Label(self.titulo,width= 50,font=('Comic Sans MS', '8', 'bold'), fg='darkred', bg="white", text= arquivo[0][i]).place(x=10, y=int(cl.contador_botao.indice)*30)
-        Label(self.titulo,width= 10,font=('Comic Sans MS', '8', 'bold'), fg='darkred', bg="white", text= arquivo[1][i]).place(x=398, y=int(cl.contador_botao.indice)*30)
+        Label(self.titulo,width= 13,font=('Comic Sans MS', '8', 'bold'), fg='darkred', bg="white", text= arquivo[1][i]).place(x=390, y=int(cl.contador_botao.indice)*30)
         Label(self.titulo,width= 10,font=('Comic Sans MS', '8', 'bold'), fg='darkred', bg="white", text= arquivo[2][i]).place(x=512, y=int(cl.contador_botao.indice)*30)
         Label(self.titulo,width= 10,font=('Comic Sans MS', '8', 'bold'), fg='darkred', bg="white", text= arquivo[3][i]).place(x=650, y=int(cl.contador_botao.indice)*30)
 
