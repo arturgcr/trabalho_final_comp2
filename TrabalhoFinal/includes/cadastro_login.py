@@ -77,8 +77,16 @@ def loginUsuario(email_login,senha_login, aba, aba_a_ser_fechada):
         elif logado == False and i == (len(arquivo)-1):
             print("Senha ou usuário incorretos ou não cadastrados")
 
+#filtro aplicado a exibição do dataset no menu
 global filtro
-filtro = {0: "Poetry", 1:"Mystery", 2:"Biography", 3:"Science Fiction", 4:"Romance", 5:"Business", 6:"Fiction", 7:"Politics", 8:"Default", 9:"Psychology", 10:None}
+filtro = {0:None}
+arquivo = pd.read_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", header = None)
+for i in range(1,len(pd.unique(arquivo[1]))):
+    filtro[i] = (pd.unique(arquivo[1]))[i]
+
+global n 
+n = (len(filtro) - 1)
+#print(filtro)
 
 #classe para contar na exibição do filtro
 class Contador:
@@ -93,7 +101,7 @@ class Contador:
 
 #cria os objetos contadores para utilizar na exibição do filtro, assim n se perde a contagem
 global contador_filtro
-contador_filtro = Contador(10)
+contador_filtro = Contador(0)
 
 global contador_botao
 contador_botao = Contador(0)

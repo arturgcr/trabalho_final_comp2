@@ -167,7 +167,7 @@ class Usuario:
     def exibe_dataset(self):
         arquivo = pd.read_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", header = None)
         for i in range(1,(len(arquivo)-1)):
-             print([arquivo[0][i],arquivo[1][i],arquivo[2][i],arquivo[3][i],arquivo[4][i],arquivo[5][i]])
+             print(arquivo[0][i],arquivo[1][i],arquivo[2][i],arquivo[3][i],arquivo[4][i],arquivo[5][i])
 
     def grafico_mediavend(self,dia,mes,ano):
         datelist = []
@@ -175,7 +175,7 @@ class Usuario:
         n = dia
         numvend = 0
         historico = pd.read_csv("TrabalhoFinal/arquivosCsv/historicoDeCompra.csv",header=None)
-        while n < dia + 7:
+        while n <= dia - 7:
             for i in range(1,len(historico)):
                 if historico[3][i] == n and historico[4][i] == mes and historico[5][i] == ano:
                     numvend = numvend + 1
@@ -192,3 +192,16 @@ class Usuario:
         janela = plt.figure(figsize=(10,5))
         grafico = janela.add_axes([0,0,1,1])
         grafico.bar(df["dias"],df["vendas"])
+
+    def graficos_venda_fat(self,dia,mes,ano):
+        vendas = 0
+        faturamento = 0
+        historico = pd.read_csv("TrabalhoFinal/arquivosCsv/historicoDeCompras.csv",header=None)
+        for i in range(1,len(historico)):
+            if historico[3][i] == dia and historico[4][i] == mes and historico[5][i] == ano:
+                vendas = vendas + 1
+                faturamento = faturamento + historico[2][i]
+        df = pd.DataFrame(data =[["vendas",vendas],["faturamento",faturamento]], columns =["tipo","valor"])
+        janela = plt.figure(figsize=(10,5))
+        grafico = janela.add_axes([0,0,1,1])
+        grafico.bar(df['tipo'],df['valor'])

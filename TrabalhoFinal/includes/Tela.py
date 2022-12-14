@@ -3,6 +3,7 @@ from tkinter import *
 import cadastro_login as cl
 from Usuario import *
 
+
 class Tela:
   def __init__(self, titulo, largura_aba, altura_aba, cor):
     self.titulo = titulo
@@ -207,9 +208,9 @@ class Tela:
       muda_produto.place(x=0,y=0)
 
     #define o botão
-    filtro = Button(self.titulo, text = "Filtro",width = 13, command = lambda: [self.titulo.destroy(), cl.contador_filtro.aumenta_indice(10,0), menu.tela_menu(), cl.contador_botao.zerar()])
+    filtro = Button(self.titulo, font=('Comic Sans MS', '8', 'bold'), text = "Filtro " + str(cl.contador_filtro.indice) + "/" + str(cl.n),width = 13, command = lambda: [self.titulo.destroy(), cl.contador_filtro.aumenta_indice(cl.n,0), menu.tela_menu(), cl.contador_botao.zerar()])
     #exibe o botão na tela nas coordenadas expressas
-    filtro.place(x=126,y=0)
+    filtro.place(x=126,y=-2)
 
     #define o botão
     saida_usuario = Button(self.titulo, text = "Sair ⍈",width = 13, command = lambda: self.titulo.destroy())
@@ -232,13 +233,14 @@ class Tela:
 
     #define a variavel de leitura, lendo o arquivo por completo
     arquivo = pd.read_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", header = None)
-
+    
     #percorre os itens do dataset
     for i in range(1, len(arquivo)):
       if arquivo[1][i] == cl.filtro[cl.contador_filtro.indice] or cl.filtro[cl.contador_filtro.indice] == None:
         cl.contador_botao.aumenta_indice(19,1)
         
-        Button(self.titulo, text = "+", command = lambda: [cl.usuario_ativo.adiciona_produto_ao_carrinho(arquivo[0][i])]).place(x=614,y=int(cl.contador_botao.indice)*30)
+        #exibe o menu colocando o botao e os espaços com nome, categoria, avaliação e preço
+        Button(self.titulo, text = "+", command = lambda:(cl.usuario_ativo.adiciona_produto_ao_carrinho(arquivo[0][i]))).place(x=614,y=int(cl.contador_botao.indice)*30)
         Label(self.titulo,width= 50,font=('Comic Sans MS', '8', 'bold'), fg='darkred', bg="white", text= arquivo[0][i]).place(x=10, y=int(cl.contador_botao.indice)*30)
         Label(self.titulo,width= 10,font=('Comic Sans MS', '8', 'bold'), fg='darkred', bg="white", text= arquivo[1][i]).place(x=398, y=int(cl.contador_botao.indice)*30)
         Label(self.titulo,width= 10,font=('Comic Sans MS', '8', 'bold'), fg='darkred', bg="white", text= arquivo[2][i]).place(x=512, y=int(cl.contador_botao.indice)*30)
