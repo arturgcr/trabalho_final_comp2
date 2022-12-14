@@ -106,7 +106,7 @@ class Usuario:
             if verifica:
                 print("Arquivo não encontrado")
     
-    def cadastrar_produtos(self,titulo,categoria,avaliacao,preco,estoque,quantidade, aba):
+    def cadastrar_produtos(self,titulo,categoriaoria,avaliacao,preco,estoque,quantidade, aba):
         if self.tipo_usuario == "administrador":
             #abre o arquivo .csv de cadastro no modo append para adicionar usuarios
             with open("TrabalhoFinal/arquivosCsv/dataset_livros.csv", mode="a", newline="\n") as escrita_no_arquivo:
@@ -126,7 +126,7 @@ class Usuario:
                         print("Produto ja cadastrado")
                     else:
                         #adiciona produto ao dataset
-                        objeto_de_escrita.writerow([titulo,categoria,avaliacao,preco,estoque,quantidade])
+                        objeto_de_escrita.writerow([titulo,categoriaoria,avaliacao,preco,estoque,quantidade])
                         aba.destroy()
                         print("produto cadastrado com sucesso")
                 else:
@@ -136,15 +136,15 @@ class Usuario:
         #define a variavel de leitura, lendo o arquivo por completo
         arquivo = pd.read_csv("TrabalhoFinal/arquivosCsv/historicoDeCompra.csv", header = None)
         if self.tipo_usuario == "usuario":
-            for i in range(1,(len(arquivo)-1)):
+            for i in range(1,(len(arquivo))):
                 if arquivo[0][i] == self.email:
                     print([arquivo[0][i],arquivo[1][i],arquivo[2][i],arquivo[3][i],arquivo[4][i],arquivo[5][i]])
         
         if self.tipo_usuario == "vendedor" or self.tipo_usuario == "administrador":
             cliente = input("De qual cliente você gostaria de verificar o histórico? ")
-            for i in range(1,(len(arquivo)-1)):
+            for i in range(1,(len(arquivo))):
                 if cliente == arquivo[0][i]:
-                    print([arquivo[0][i],arquivo[1][i],arquivo[2][i],arquivo[3][i],arquivo[4][i],arquivo[5][i]])
+                    print(arquivo[0][i],arquivo[1][i],arquivo[2][i],arquivo[3][i],arquivo[4][i],arquivo[5][i])
     
     def soma_do_carrinho(self):
         lista_de_soma = []
@@ -173,22 +173,25 @@ class Usuario:
              print(arquivo[0][i],arquivo[1][i],arquivo[2][i],arquivo[3][i],arquivo[4][i],arquivo[5][i])
 
     def grafico_mediavend(self,dia,mes,ano):
+        """cria um grafico de barras que contabiliza o numero de vendas de uma semana"""
         datelist = []
         vendassem = []
         n = dia
         numvend = 0
-        historico = pd.read_csv("TrabalhoFinal/arquivosCsv/historicoDeCompra.csv",header=None)
-        while n <= dia - 7:
-            for i in range(1,len(historico)):
-                if historico[3][i] == n and historico[4][i] == mes and historico[5][i] == ano:
-                    numvend = numvend + 1
-            n = n + 1
-            vendassem = vendassem + [numvend]
+        historico = pd.read_csv(r"C:\Users\artur\OneDrive\Área de Trabalho\Comp2\trabalho_no_git\trabalho_final_comp2\TrabalhoFinal\arquivosCsv\historicoDeCompra.csv",header=None)
+        # usa um loop while para contabilizar o numero de vendas totais de cada dia da semana
+        while int(n) != int(dia) - 7:
             numvend = 0
-        n = dia
-        for j in range(0,len(vendassem)):
-            list.append(datelist,[[vendassem[j],str(n)+"/"+str(mes)+"/"+str(ano)]])
-            n = n + 1
+            for i in range(1,len(historico)):
+                if str(historico[3][i]) == str(n) and str(historico[4][i]) == str(mes) and str(historico[5][i]) == str(ano):
+                    numvend = numvend + 1
+            n = n - 1
+            vendassem = vendassem + [numvend]
+        l = dia
+        
+        for j in range(len(vendassem)):
+            datelist.append([vendassem[j],str(l)+"/"+str(mes)+"/"+str(ano)])
+            l = l - 1
         df = pd.DataFrame(data = datelist, columns =["vendas","dias"])
         print("média :" + str(sum(vendassem)/7))
         print("desvio padrão :" + str(np.std(vendassem)))
@@ -197,43 +200,48 @@ class Usuario:
         grafico.bar(df["dias"],df["vendas"])
 
     def graficos_venda_fat(self,dia,mes,ano):
+        """ plota um grafico do numero de vendas e do faturamento em um dia especifico"""
         vendas = 0
         faturamento = 0
-        historico = pd.read_csv("TrabalhoFinal/arquivosCsv/historicoDeCompras.csv",header=None)
-        for i in range(1,len(historico)):
-            if historico[3][i] == dia and historico[4][i] == mes and historico[5][i] == ano:
-                vendas = vendas + 1
-                faturamento = faturamento + historico[2][i]
+        historico = pd.read_csv(r"C:\Users\artur\OneDrive\Área de Trabalho\Comp2\trabalho_no_git\trabalho_final_comp2\TrabalhoFinal\arquivosCsv\historicoDeCompra.csv",header=None)
+        for i in range(len(historico)):
+            if str(historico[3][i]) == str(dia) and str(historico[4][i]) == str(mes) and str(historico[5][i]) == str(ano):
+                vendas += 1
+                faturamento = faturamento + int(historico[4][i])
         df = pd.DataFrame(data =[["vendas",vendas],["faturamento",faturamento]], columns =["tipo","valor"])
         janela = plt.figure(figsize=(10,5))
         grafico = janela.add_axes([0,0,1,1])
         grafico.bar(df['tipo'],df['valor'])
 
-def cat_prod(self):
+    def cat_prod(self):
+        """plota um grafico do numero de vendas por categoriaoria do dataset"""
         nomelist =[]
-        categ = []
+        categoria = []
         datelist = []
-        livro = pd.read_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", header = None)
-        historico = pd.read_csv("TrabalhoFinal/arquivosCsv/historicoDeCompra.csv",header=None)
+        livro = pd.read_csv(r"C:\Users\artur\OneDrive\Área de Trabalho\Comp2\trabalho_no_git\trabalho_final_comp2\TrabalhoFinal\arquivosCsv\dataset_livros.csv", header = None)
+        historico = pd.read_csv(r"C:\Users\artur\OneDrive\Área de Trabalho\Comp2\trabalho_no_git\trabalho_final_comp2\TrabalhoFinal\arquivosCsv\historicoDeCompra.csv",header=None)
         n = 0
-        for m in range(0,len(livro)-1):
-            if livro[1][m] not in categ:
-                categ.append(livro[1][m])
-                categ.append(0)
-        for j in range(0,len(historico)-1):
-            nomelist.append(historico[0][j])
-        for i in range(0,len(livro)-1):
-            if nomelist[n] == livro[0][i]: 
-                if livro[1][i] in categ:
-                    for k in range(0,len(categ)-1):
-                        if categ[k] == livro[1][i]:
-                            categ[k+1] = categ[k+1] + 1
+        for m in range(len(livro)-1):
+            if livro[1][m] not in categoria:
+                categoria.append(livro[1][m])
+                categoria.append(0)
+        for j in range(len(historico)-1):
+            nomelist.append(historico[1][j])
+        for i in range(len(livro)-1):
+            if nomelist[n] == livro[1][i]: 
+                if livro[1][i] in categoria:
+                    for k in range(len(categoria)-1):
+                        if categoria[k] == livro[1][i]:
+                            categoria[k+1] = categoria[k+1] + 1
             n = n + 1
             if n > len(nomelist):
                 break
-        for t in range(0,len(categ)/2):
-            datelist.append([[categ[t],categ[t+1]]])    
+        for t in range(len(categoria)/2):
+            datelist.append([[categoria[t],categoria[t+1]]])    
         df = pd.DataFrame(data = datelist, columns =["categoria","venda"])
         janela = plt.figure(figsize=(10,5))
         grafico = janela.add_axes([0,0,1,1])
-        grafico.bar(df["categoria"],df["venda"])
+        grafico.bar(df["categoriaoria"],df["venda"])
+
+artur = Usuario("nome", "endereco", "senha", "email", "administrador")
+artur.cat_prod()
