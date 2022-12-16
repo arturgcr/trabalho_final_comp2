@@ -1,3 +1,7 @@
+
+"""arquivo de resolução diversa de problemas como de contagem utilizando classes para aplicações no filtro e verificção
+de login e cadastro de usuario e a utilização do login em si para a criação do objeto usuario do arquivo Usuario. """
+
 import pandas as pd
 from csv import *
 from Usuario import *
@@ -50,12 +54,15 @@ def loginUsuario(email_login,senha_login, aba, aba_a_ser_fechada):
     uma pessoa ja cadastrada, processo de login"""
     arquivo = pd.read_csv("TrabalhoFinal/arquivosCsv/cadastros.csv", header = None)
 
+    #deixa global os parâmetros da criação do objeto para evitar possíveis erros
     global nome
     global endereco
     global senha
     global email
     global tipo_usuario
     global usuario_ativo
+
+    #define um verificador
     logado = False
     #percorre as linhas do arquivo de cadastros de usuarios
     for i in range(1,len(arquivo)):
@@ -69,50 +76,51 @@ def loginUsuario(email_login,senha_login, aba, aba_a_ser_fechada):
             tipo_usuario = arquivo[4][i]
             usuario_ativo = Usuario(nome, endereco, senha, email, tipo_usuario)
             print("__________LOGADO__________")
+            #desativa o verificador
             logado = True
+            #destroi a aba de login
             aba.destroy()
+            #inicia o menu
             aba_a_ser_fechada.tela_menu()
             break
-
+        
+        #utiliza do verificador para exibir a mensagem correspondente
         elif logado == False and i == (len(arquivo)-1):
             print("Senha ou usuário incorretos ou não cadastrados")
 
 #filtro aplicado a exibição do dataset no menu
 global filtro
+#cria um dicionário para a aplicação do filtro
 filtro = {0:None}
+#le o dataset
 arquivo = pd.read_csv("TrabalhoFinal/arquivosCsv/dataset_livros.csv", header = None)
-for i in range(1,len(pd.unique(arquivo[1]))):
-    filtro[i] = (pd.unique(arquivo[1]))[i]
+#utiliza-se da função unique do panda para ler a coluna correspondente ao item do livro e percorre a 
+#lista gerada pela função adicionando seus termos ao dicionário
+for i in range(len(pd.unique(arquivo[1]))):
+    filtro[i+1] = (pd.unique(arquivo[1]))[i]
 
+#tamanho do filtro e utilizado na exibição somente, para evitar erros do tkinter em utilizar a função len() em seus botões
 global n 
 n = (len(filtro) - 1)
-#print(filtro)
 
-#classe para contar na exibição do filtro
+#classe para contar na exibição do filtro e de exibição adequada dos botões na interface
 class Contador:
     def __init__(self, inicio):
         self.indice = inicio
     def aumenta_indice(self,limite, retorno):
+        """função que aumenta o indice até um limite definido e depois o reseta"""
         self.indice += 1
         if self.indice > limite:
             self.indice = retorno
     def zerar(self):
+        """função para zerar o contador"""
         self.indice = 0
 
 #cria os objetos contadores para utilizar na exibição do filtro, assim n se perde a contagem
 global contador_filtro
 contador_filtro = Contador(0)
 
+#cria os objetos contadores para utilizar na exibição do botão, assim se garante sua distribuição adequada na tela
 global contador_botao
 contador_botao = Contador(0)
-
-class Reserva_botao:
-    def __init__(self, i):
-        self.indice = i
-
-    def retorna_i(self):
-        return self.indice
-
             
-
-

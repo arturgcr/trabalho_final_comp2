@@ -1,9 +1,11 @@
+"""arquivo responsável por rodar todo o código em si, é a 'main' desse código e cria toda a interface gráfica em si. """
+
 # importa a biblioteca que cria a aba do app
 from tkinter import *
 import cadastro_login as cl
 from Usuario import *
 
-
+#classe de exibição da interface
 class Tela:
   def __init__(self, titulo, largura_aba, altura_aba, cor):
     self.titulo = titulo
@@ -239,7 +241,7 @@ class Tela:
       if arquivo[1][i] == cl.filtro[cl.contador_filtro.indice] or cl.filtro[cl.contador_filtro.indice] == None:
         cl.contador_botao.aumenta_indice(19,1)
         
-        #exibe o menu colocando o botao e os espaços com nome, categoria, avaliação e preço
+        #exibe o menu colocando o botao e os espaços com nome, categoria, avaliação e preço -> utilizando os objetos contadores na exibição por linha
         Button(self.titulo, text = "+", command = lambda:(cl.usuario_ativo.adiciona_produto_ao_carrinho(arquivo[0][i]))).place(x=614,y=int(cl.contador_botao.indice)*30)
         Label(self.titulo,width= 50,font=('Comic Sans MS', '8', 'bold'), fg='darkred', bg="white", text= arquivo[0][i]).place(x=10, y=int(cl.contador_botao.indice)*30)
         Label(self.titulo,width= 13,font=('Comic Sans MS', '8', 'bold'), fg='darkred', bg="white", text= arquivo[1][i]).place(x=390, y=int(cl.contador_botao.indice)*30)
@@ -249,7 +251,7 @@ class Tela:
     self.titulo.mainloop(1)
 
   def tela_carrinho_de_compras(self):
-    """função para criar a tela de login para o usuário"""
+    """função para criar a tela de carrinho de compras para o usuário"""
     # define a aba como a chamada da criação da biblioteca
     self.titulo = Tk()
 
@@ -331,7 +333,7 @@ class Tela:
 
     self.titulo.mainloop(1)
 
-
+#cria os objetos para utilizar na exibição da interface gráfica
 login_usuario = Tela("login", 350, 180, "darkred")
 cadastro_produto = Tela("cadastro", 350, 250, "darkred")
 cadastro_usuario = Tela("cadastro_usuario", 350, 300, "darkred")

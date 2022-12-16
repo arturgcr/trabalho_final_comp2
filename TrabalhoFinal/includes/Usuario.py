@@ -1,3 +1,11 @@
+"""arquivo de criação da classe usuario com seus respectivos atributos que serão utilizados"""
+
+#as variáveis a baixo são so caminhos do arquivo csv que devem ser trocadas para as do usuario
+#caminho do histórico de compras
+caminho_do_arquivo_historico_de_compra = r"C:\Users\artur\OneDrive\Área de Trabalho\Comp2\trabalho_no_git\trabalho_final_comp2\TrabalhoFinal\arquivosCsv\historicoDeCompra.csv"
+#caminho do dataset_livros.csv
+caminho_do_arquivo_dataset_livros = r"C:\Users\artur\OneDrive\Área de Trabalho\Comp2\trabalho_no_git\trabalho_final_comp2\TrabalhoFinal\arquivosCsv\dataset_livros.csv"
+
 import pandas as pd
 from csv import *
 from datetime import date
@@ -178,7 +186,7 @@ class Usuario:
         vendassem = []
         n = dia
         numvend = 0
-        historico = pd.read_csv(r"C:\Users\artur\OneDrive\Área de Trabalho\Comp2\trabalho_no_git\trabalho_final_comp2\TrabalhoFinal\arquivosCsv\historicoDeCompra.csv",header=None)
+        historico = pd.read_csv(caminho_do_arquivo_historico_de_compra,header=None)
         # usa um loop while para contabilizar o numero de vendas totais de cada dia da semana
         while int(n) != int(dia) - 7:
             numvend = 0
@@ -203,7 +211,7 @@ class Usuario:
         """ plota um grafico do numero de vendas e do faturamento em um dia especifico"""
         vendas = 0
         faturamento = 0
-        historico = pd.read_csv(r"C:\Users\artur\OneDrive\Área de Trabalho\Comp2\trabalho_no_git\trabalho_final_comp2\TrabalhoFinal\arquivosCsv\historicoDeCompra.csv",header=None)
+        historico = pd.read_csv(caminho_do_arquivo_historico_de_compra,header=None)
         for i in range(len(historico)):
             if str(historico[3][i]) == str(dia) and str(historico[4][i]) == str(mes) and str(historico[5][i]) == str(ano):
                 vendas += 1
@@ -218,8 +226,8 @@ class Usuario:
         nomelist =[]
         categoria = []
         datelist = []
-        livro = pd.read_csv(r"C:\Users\artur\OneDrive\Área de Trabalho\Comp2\trabalho_no_git\trabalho_final_comp2\TrabalhoFinal\arquivosCsv\dataset_livros.csv", header = None)
-        historico = pd.read_csv(r"C:\Users\artur\OneDrive\Área de Trabalho\Comp2\trabalho_no_git\trabalho_final_comp2\TrabalhoFinal\arquivosCsv\historicoDeCompra.csv",header=None)
+        livro = pd.read_csv(caminho_do_arquivo_dataset_livros, header = None)
+        historico = pd.read_csv(caminho_do_arquivo_historico_de_compra,header=None)
         n = 0
         for m in range(len(livro)-1):
             if livro[1][m] not in categoria:
@@ -242,6 +250,3 @@ class Usuario:
         janela = plt.figure(figsize=(10,5))
         grafico = janela.add_axes([0,0,1,1])
         grafico.bar(df["categoriaoria"],df["venda"])
-
-artur = Usuario("nome", "endereco", "senha", "email", "administrador")
-artur.cat_prod()
